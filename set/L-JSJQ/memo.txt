@@ -1,0 +1,178 @@
+<!-- 값만 가져올꺼면 innerText, innerHTML 선언만 하고 
+값을 수정할꺼면 뒤에 속성값 넣어줘라 -->
+
+document.body.style.background
+    ㄴ js로 속성 접근하는거 있었는데 찾아보기
+
+21
+    ㄴ ajax 비동기 통신
+    ㄴ xml 데이터를 받는 표준 포맷
+    ㄴ json
+        ㄴ xml이 무거워서 json사용
+
+20
+    ㄴ cleraTimeout()
+        ㄴ setTimeout()을 취소한다.
+        ㄴ 정리하기
+    ㄴ var var ran2 = Math.ceil(Math.random() * 20) - 10; -10 ~ 10
+        ㄴ 1~20 값에서 -10~10 오차 범위를 설정한다
+        ㄴ 정리하기
+
+19
+    ㄴ Math.random()
+        ㄴ 정리하기
+    ㄴ#stage #time {background:#02cc5d; color:#d30606; width: 100%;position: absolute; height:10px;bottom:-20px;}
+    #stage #time.play {width:0; background:#d30606;transition: linear all 10s;}
+        ㄴ 정리하기
+    ㄴ if(play)
+        ㄴ 정리하기
+    ㄴ 절대값이 뭐지?
+    ㄴ button을 눌렀을때 true와 false값으로 어떻게 변하나?
+        ㄴ 정리하기
+
+18
+    ㄴ toggle 햄버거 기능 만들때 참조
+    ㄴ outerWidth
+        ㄴ 정리하기
+    ㄴ width()
+        ㄴ width()는 함수다. 사용자 현제 웹 크기 값을 알수있다.
+        ㄴ 정리하기
+
+17
+    ㄴ 
+
+16
+    ㄴ https://cdnjs.com/
+        ㄴ jquery
+        ㄴ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            ㄴ 이렇게만 넣어줘도 된다 한다.
+    ㄴ releases.jquery.com
+    ㄴ $("ul").css
+        ㄴ 단수면 단수 다수면 다수를 잡아준다
+    ㄴ eq를 js로 바꾸면 foreach인가? 바꾸면 어떤거지?
+        ㄴ eq정리하기
+            ㄴ document.querySelectorAll를 jq로 바꾸면 eq인가?
+    ㄴ $("body").css("background", "#000").css("color", "#fff")
+        ㄴ 체인방식 정리하기
+    ㄴ nth-of-type과 nth-child차이 정리하기
+    ㄴ prepend, append
+        ㄴ 정리하기
+    ㄴ css는 하위 계층이 조상을 선택하는게 
+    안되기 때문에 js로 해줘야 한다
+    ㄴ val()
+
+
+
+15
+    ㄴ window.getComputedStyle 정리하기
+    ㄴ slide정리하기
+    ㄴ appendChild
+        ㄴ cloneNode
+
+14
+    for문 스코프 var와 let차이 정리하기
+    한글자식 출력하는 기능 정리하기
+    퀴즈게임 skill에 정리하기
+
+13
+    for, foreach정리하기
+    this정리하기
+    classList 함수 정리하기
+        ㄴ add, remove, toggle
+        ㄴ 생각보다 자주 쓰이는거 같다 퀴즈 문제에서 쓰였다
+        ㄴ 정리하자
+    getComputedStyle
+        ㄴ 자주사용하지 않는거 같은데.. 일단 정리하자
+
+12
+    document.querySelectorAll("input")[0].onchange = function() {
+    alert();}
+        ㄴ onchanges 정리하기
+    this정리하기
+
+11
+    ㄴ 위 코드를 예로 들면 'click'이라는 이벤트가 발생했을 때 
+    이벤트에 관한 정보가 담기는 이벤트 객체가 생성된다.
+    이벤트가 발생하면 이벤트 객체가 생성이 되는데, 
+    그 이벤트 객체가 e라는 파라미터에 할당이 된다.
+        ㄴ https://velog.io/@ssarr_i/js-functione%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC
+        ㄴ https://velog.io/@simej1214/JS-function-e-%EB%8A%94-%EC%96%B4%EB%96%A4-%EB%9C%BB%EC%9D%BC%EA%B9%8C
+            ㄴ 다시 정리해야 한다.
+    ㄴ if(e.ctrlKey == true && e.keycode == 82){}
+        ㄴ 값이 ture나 false이면 약식을 써두 된다
+            ㄴ if(e.ctrlKey && e.keycode == 82){}
+    ㄴ 마우스기능, 슈퍼마리오 움직이기 ulile파일에 넣기
+10
+    ㄴ onclick 배웠다
+    ㄴ ondblclick 배웠다
+        ㄴ 더블클릭이라 두번 클릭해야 한다.
+    ㄴ onmouseover
+    ㄴ onmouseout
+    ㄴ onkeypress
+    ㄴ onkeydown
+    ㄴ onkeyup
+    ㄴ onfocus
+    ㄴ onblur
+    ㄴ onchange
+    ㄴ onload
+    ㄴ onresize
+    ㄴ addEventListener
+        ㄴ onclick보다 addEventListener를 사용하는게 좋다고 한다.
+        ㄴ 단순할거 쓸땐 onclick
+
+09
+    ㄴ 스코프 배웠다
+
+08
+    ㄴ 사용자가 지정한 값으로 배경을 바꿔주는걸 배웠다.
+    ㄴ 재귀함수 선생님께 다시 물어보기
+        ㄴ 08원본파필 참조
+    ㄴ 태그에 value값 가져와서 입력 해주는걸 배웠다.
+        ㄴ button[6].onclick = function() {
+    document.querySelector("body").style.background= document.querySelector('input').value;
+}
+
+07
+    ㄴ onclick에 함수를 넣어서 실행하는 방법을 배웠다
+        ㄴ 
+    ㄴ document.querySelector를 이용해서 checked선택 
+        ㄴ if(document.querySelector("#opt3").checked)
+
+06
+    ㄴ DOM과 BOM차이점을 설명하세요
+    ㄴ innerText : 글자를 얻거나 변경
+    innerHTML : 글자+태그를 얻거나 변경
+
+05
+    ㄴ window가 DOM를 감싸고 있다.
+    ㄴ DOM이 html을 감싸고있다.
+
+04
+    ㄴ dday = dday / (1000*60*60*24); // 하루에 대한 1/1000 초
+        // ㄴ 이해 못했다
+        ㄴ js 하루 1/1000 초 검색해서 공부해보기
+            ㄴ https://horangi.tistory.com/396
+    ㄴ 정규 표현식
+    ㄴ *1을 하면 숫자값으로 바뀐다
+
+
+03
+    ㄴ 17==num하고 같으면 우는 이모지 출력
+        ㄴ 랜덤 함수 넣어서 우는 이모지 찾는 게임 만들어 보기
+
+
+02
+    ㄴ alert(), prompt(), confirm()
+    ㄴ document.write(date.getFullYear - age)
+        ㄴ 해당값 출력하면 NaN이 나온다 이유를 모르겠다
+            ㄴ 함수라 getFullYear() 뒤에 소괄호를 넣어줘야 한다
+
+01
+    ㄴ alert
+    ㄴ 내부스크립트 : script요소(태그)로 작성, body의 마지막 내용으로 작성을 권고.
+    ㄴ 파일이 없지만 
+    <script src="01.JS"> 써주고 ctrl+ 클릭 해주면 자동 생성 해준다
+    ㄴ undefined 값이 없다는 뜻이다
+
+html이 뭐에요?
+    ㄴ 컴파일 과정이 없는 인터프린터 언어

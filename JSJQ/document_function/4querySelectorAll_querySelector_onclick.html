@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>red</button>
+    <button>orange</button>
+    <button>green</button>
+    <button>reset</button>
+    <button>글자변경</button>
+    <button>HTML 변경</button>
+    <input type="color" value="red">
+    <button>배경색</button>
+    <input type="text" value="red">
+    <button>배경색</button>
+    <button>다크테마</button>
+
+    <!-- 버튼은 여러게 있기 때문이 All로 모두 선택해주고 배열[0]로 선택 해준다. -->
+    <!-- body는 하나 이기 때문에 Selector로만 지정한다 -->
+
+<script>
+    document.querySelector("button:nth-of-type(1)").onclick = function() {
+        // alert("첫번째 버튼 누름");
+        document.querySelector("body").style.backgroundColor = "red";
+    }
+    // 문제) 버튼들 누르면 해당 배경색으로 변경되게!
+    var button = document.querySelectorAll("button");
+    var body = document.querySelector("body");
+
+    button[1].onclick = function() {
+        // alert("첫번째 버튼 누름");
+        body.style.backgroundColor = "orange";
+        alert(document.querySelectorAll("li")[0].id);
+    }
+    button[2].onclick = function() {
+        // alert("첫번째 버튼 누름");
+        body.style.backgroundColor = "green";
+    }
+    button[3].onclick = function() {
+        // alert("첫번째 버튼 누름");
+        body.style.backgroundColor = "";
+    }
+    button[4].onclick = function() {
+        document.querySelector("h2").innerText = "글 변경됨"
+        // var txt = document.querySelector("h2").innerText;
+        // alert(txt);
+    }
+    button[5].onclick = function() {
+        button[5].innerHTML = "<strong>변경됨</strong>"
+    }
+    button[6].onclick = function() {
+        var bg = document.querySelector("input").value;
+        body.style.backgroundColor = bg;
+    }
+    button[7].onclick = function() {
+        var color = document.querySelectorAll("input")[1].value;
+        body.style.backgroundColor = color;
+    }
+    //문제) 다크테마 버튼 기능: 배경은 어둡고 글자는 밝게!
+    button[8].onclick = function(){
+        //다크테마 기능
+        // document.querySelector("body").style.backgroundColor="black"
+        // document.querySelector("body").style.color="white"
+        // body.style.backgroundColor="black"
+        // body.style.color="white"
+        // button[8].innerText="밝은테마"
+
+        //밝은테마 기능
+        // body.style.backgroundColor="white"
+        // body.style.color="black"
+        // button[8].innerText="밝은테마"
+
+        var bg = body.style.backgroundColor= "다크테마";
+
+        if(bg == button[8].innerText){
+            // 다크테마
+            body.style.backgroundColor="black"
+            body.style.color="white"
+            button[8].innerText="밝은테마"
+        }else{
+            // 밝은테마
+            body.style.backgroundColor="white"
+            body.style.color="black"
+            button[8].innerText="다크테마"
+        }
+    }
+</script>
+</body>
+</html>

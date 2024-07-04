@@ -1,0 +1,207 @@
+모르는거 나중에 정리하기
+
+left: 0;
+
+transition-duration: 0.5s;
+transition: height 0.4s;
+    ㄴ 카테고리 4-2에서 사용했음
+
+display: inline-block;
+    ㄴ정리 하기
+
+text-align: center;
+     ㄴ 정리하기
+
+
+display: flex;
+    ㄴhtml css 50%양쪽으로 배치했을때 사용
+    ㄴ 이걸 쓰는게 적절한지 모르겠다.
+
+text-align: center;
+
+linear-gradient
+
+jQuery 05 [ image caption animation ] jQuery 이미지 캡션 애니메이션, find, filter
+    ㄴ 6:56
+    ㄴ :nth-child(1)
+    ㄴ nth-last-child(-n+2)
+    ㄴ .menu li:nth-child(1){
+    margin-right: auto;
+    }
+    /*오른쪽 메뉴 분할*/
+    .menu li:nth-child(6){
+        margin-right: auto;
+    }
+    ㄴ https://blogpack.tistory.com/859
+    ㄴ 해당글에 hover기능도 있는데 정리 해두기
+
+div, background-image 
+    ㄴ 태그나 속성등 기본적으로 부여되어있는 값 찾아보기
+
+
+홈페이지들이 body말고 wrap에 감싸져 있는데
+    ㄴ wrap없이 width:100%; 하면 넓이가 밖으로 나가서 가로 스크롤바가 생겨서 그런가?
+    ㄴ 항상 body하고 wrap에 한번더 감싸져 있어서 의문이긴 했음.
+
+div 들 여러게 있으면 중앙 정렬 하는법
+
+display: table-cell
+
+width: max-content;
+
+offsetHeight
+
+white-space: nowrap;
+
+vertical-align: baseline;
+
+display:inline
+    ㄴ 너비나 높이에 영향을 받지 않는다
+
+outline: none;
+    ㄴ outline이 뭐지 border: none과 같이 쓰는거 같은데
+
+text-align: left;
+    ㄴ naver검색창 만들때 input정렬 할떄 사용
+
+vertical-align:
+
+display:inline-flex
+
+for="search-input"
+    ㄴ for가 뭐지
+
+부모도 position: absolute; 자식도 position: absolute;일때 어떻게 속성이 적용되는거지?
+
+white-space: nowrap;
+    ㄴ 줄바꿈을 강제로 안하게 한다.
+
+
+animation: ani1 cubic-bezier(.34,.36,.45,1.3) 1.5s 1
+    ㄴ cubic-bezier애니메이션 부분정리
+
+21transform-2 파일에
+    ㄴ .transformex7:hover 부분 정리하기
+
+
+margin-top, padding-top, top 어떤 차이인지 공부 해야한다.
+    ㄴ 가시안참조반응형웹2- index3- #about #about_wrap #about_article1부분에서
+        ㄴ border를 없애니 효과가 적용이 안되서 top으로 줬음
+
+
+텍스트 정렬 이미지 정렬 차이 정리
+    ㄴ flex로도 어떤 차이인지 정리하기
+
+{display: flex; flex-direction: column; flex-wrap: wrap;}
+    ㄴ 정리하기
+
+#float {overflow: hidden;}
+#float li {float:left; margin:10px;}
+    ㄴ 부모가overflow:hidden과 자식이 float:left일때 정리하기
+
+!important
+    ㄴ 구체성 보다 우선순위가 높은 속성이다.
+
+<li>구체성 점수가 높은것 : 인라인 > 아이디 > 클레스 > 태그(요소)</li>
+    ㄴ 정리하기 html수업 15번 파일
+
+
+margin으로자리 잡아준 태그는 위에 공간이 생겨도 자동으로 따라간다
+    ㄴ position으로 준 태그는 위에 공간이 생겨도 그대로 고정이다
+
+자식을 정렬 할때는 flex
+    ㄴ 자신을 정렬 할때는 margin:auto; display:block; width:fit-content로 해주면 된다.
+
+구체성 문제는 !important를 주면 된다.
+
+header li:not(:first-child) a:hover{ background-position-y: -50px !important;}
+    ㄴ L-html 22-2파일 16번줄
+
+속성이 inpuy type을 지정해주는 방법 main .login[type=password]
+    ㄴ 정리하기
+
+main #auto+label속성 선택자에서 +는 #auto다음에있는 label을 뜻한다
+    ㄴ 정리하기
+
+translateY정리하기
+
+main #auto ~ p는 #auto 다음에 있는 p라는 뜻이다
+    ㄴ 정리하기
+
+display: inline-block;
+    ㄴ 정리하기
+
+포폴 사이트 about부분 objectfit, cover속성 주기, 배경색 좀더 연하게 해주기- 색상 코드 사이트 탐색
+    ㄴ contact부분 영어 한글 통일
+    ㄴ 글씨크기 제일 작은걸로 기준 잡기 자꾸 작아지면 안됨
+
+검색해서 나온 디자인이 흔하고 좋은 디자인이나
+    ㄴ 개인적인 생각에 디자인이지만 검색해서 안나온다면 좋지 않은 디자인이다
+        ㄴ 개인적은 생각은 홈페이지 메인으로 하지말고 작품 보기에 넣어야 한다.
+
+margin 겹침 현상 공부하기
+
+html 파일 set/L-html파일안에 저장하기
+
+margin으로 설정한 값들은 UX에서 화면을 줄여도 자동으로 따라가지만
+    ㄴ position은 화면을 줄여도 따로 논다. 라고한다. L-html nate참조
+
+img태그에 쓰이는 object-fit: cover; object-position: center;
+    ㄴ 정리하기
+
+배경이미지를 줄때 background로 줘야 하나요? img로 하니까 잘 안되요
+
+header .top_menu>li:not(li:nth-child(2)~li) { border: 1px solid red }
+    ㄴ port에 나온거 보고 정리하기
+
+after before는 필수적으로 contact가 들어가야 한다.
+    ㄴ 정리하기
+
+header .top_menu details[open]::after {display: block;}
+    ㄴ C:\Users\TJ\ajh\port\index3-원본.html  [open]속성 정리하기
+
+after before 가상 요소를 쓰면 상황에 따라 div가 덜 들어 갈수 있다.
+    ㄴ 잘 활용 해야 한다. 아직은 이해 못했다.
+
+window.location.href 와 location.href
+    ㄴ js window.location.href 정리하기  
+        ㄴ XSS; 스크립트에 location.href="도메인" 값을 줘서 악의적인 홈페이지로 이동하게 할수 있다.
+
+<img src="abc.jpg" onerror="location.href='/memo?memo='+document.cookie;">
+    ㄴ <img onerror 정리하기
+        ㄴ XSS; location.href가 막혀있으면 다른 태그에 속성을 이용하여 스크립트를 실행할수 있는 취약점이 있는지 확인한다.
+    ㄴ <img src=/admin/notice_flag?userid=admin>
+        ㄴ 위 img 태그는 /admin/notice_flag?userid=admin 경로에서 이미지를 불러오는 태그인데
+        실제 이미지는 아니지만 일단 이미지를 불러오려는 시도를 하기 때문에 페이지에 접속하게 된다.
+
+figure
+    ㄴ 정리하기
+    
+header nav .main_menu>li::after {content:""; position: absolute; width:0; height:3px; background: #2e84f5; transition: ease all .3s; margin-top:-3px}
+header nav .main_menu>li:hover::after{width: 100%;}
+    ㄴ li::after 정리하기
+        ㄴ li에::after가 어디인지 정리하기
+
+#info_wrok:check 정리하기
+save_html_clone\8KT&G\index7.html
+
+7n은 7에 배수, 3n은 3에 배수
+    ㄴ html로 달력에 토,일에 색갈줄때
+        ㄴ 토요일은 7n일요일은 7n+1로 주면 된다
+
+transform:scale(1.2)
+    ㄴ 정리하기, 네이버 마우스 호버시 작동하는 효과 줄떄 좋다
+
+text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+    ㄴ 말 줄이기
+
+save_html_clone\8KT&G\index7.html
+    ㄴ 카테고리 부분 다시 정리
+
+save_html_clone\12요기요_SP\index.html
+    ㄴ 150~172번줄 li, p단위로 줄 바꿈이 된다.
+    단위로 줄바꿈 없이 채워 넣을수 있는 속성이 없나?
+    
