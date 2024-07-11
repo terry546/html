@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인메뉴(클릭 이동 + 현재페이지 표현)</title>
+    <style>
+        * {margin:0; padding:0; list-style:none;}
+        header nav{position: fixed; width:100%; background:rgba(255,255,255,.7); backdrop-filter: blur(3px);}
+        header ul {display: flex; justify-content: center;}
+        header a {display:block; padding: 30px 20px; text-decoration:none; color:#666; font-weight: bold; transition:ease all .3s}
+        header li.on a {background: #333; color:#fff }
+        #page { position: fixed; right:30px; top:50%; display: flex; gap:30px; flex-direction: column; transform: translateY(-50%); align-items: center;}
+        #page span {width:15px; height:15px; background:#ccc; border-radius:50px;}
+        #page span.on {background:#111; width:30px;}
+        section {border:5px solid gray; min-height:100vh; box-sizing: border-box;}
+        section h2 {padding: 100px 50px;}
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="on"><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="page"></div>
+</header>    
+<main>
+    <section class="menu">
+        <h2>home</h2>
+    </section>
+    <section class="menu">
+        <h2>Portfolio</h2>
+    </section>
+    <section class="menu">
+        <h2>profile</h2>
+    </section>
+    <section class="menu">
+        <h2>contact</h2>
+    </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // 메뉴갯수에 맞춰 #page에 span 넣기
+    $("nav li").each(function(index) {
+        // #page에 span 넣기
+        if(index==0) {
+            $("#page").append("<span class='on'></span>")
+        } else {
+            $("#page").append("<span></span>")
+        }
+    })
+    // 메뉴 클릭 이벤트
+    $("nav li").click(function(){
+        var menu = $("nav li").index(this);
+        // alert(menu);
+        var t = $(".menu").eq(menu).offset().top;
+        $("html").animate({
+            scrollTop: t
+        },500);
+        // // 메뉴의 현재위치 표현
+        // $("nav li").removeClass("on");
+        // $(this).addClass("on");
+        return false; // a링크 막기
+    })
+    //스크롤 이벤트
+    var menu2 = $("section").eq(1).offset().top - ($(window).height() / 2);
+    var menu3 = $("section").eq(2).offset().top - ($(window).height() / 2);
+    var menu4 = $("section").eq(3).offset().top - ($(window).height() / 2);
+    $(window).scroll(function(){
+        var t = $(this).scrollTop();
+        // console.log(t);
+        $("header .on").removeClass("on");
+        if(t < menu2) { // menu1
+            $("nav li:eq(0), #page span:eq(0)").addClass("on");
+        } else if(t < menu3) { //menu2
+            $("nav li:eq(1), #page span:eq(1)").addClass("on");
+        } else if(t < menu4) { //menu3
+            $("nav li:eq(2), #page span:eq(2)").addClass("on");
+        } else { //menu4
+            $("nav li:eq(3), #page span:eq(3)").addClass("on");
+        }
+    })
+</script>    
+</body>
+</html>

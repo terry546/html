@@ -19,11 +19,11 @@
     <li></li>
 </ul>
 <select>
-    <option>--카테고리--</option>
+    <option value="">--카테고리--</option>
     <option>건강과 행복</option>
     <option>도전과 격언</option>
     <option>사랑과 우정</option>
-    <option>시간</option>
+    <option value="시간과 순간">시간</option>
     <option>인간관계</option>
     <option>자기계발</option>
     <option>지혜와 가치</option>
@@ -31,27 +31,42 @@
 
 </select>
 
+<input type="range" min="5" max="50">
+<span id="length">10</span>
 <button>명언 불러오기</button>
-<ul id="result">
+<ol id="result">
     
-</ul>
-
-
-
+</ol>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
+// 건강 165
+// 도전 241
+// 사랑 48
+// 시간 29
+// 인간 47
+// 계발 211
+// 지혜 154
+// 창의성 27
+
+
 
 $("button").eq(0).click(function(){
+    var cate = $("select").val();
+    if(cate == "all"){
+        cate = ""
+    }
+    var count = $("input").val();
         $.ajax({
             // 과제) 사용자가 카테고리 선택해서 불러올수 있게!
-            url: "https://ljj.kr/tool/api.php",
-            // url: "https://ljj.kr/tool/api.php?count=20&category='건강과 행복'",
+            // url: "https://ljj.kr/tool/api.php",
+            url: "https://ljj.kr/tool/api.php?count="+count+"&category="+cate,
             type: "get", 
             dataType: "json",
             success: function(data) {
                 // $("div").eq(1).text(data)
-                console.log(data) //전체데이터
+                // console.log(data) //전체데이터
+                console.log(data.length) //전체데이터
                 console.log(data[1]); //한개의 데이터 (한개의 객체)
                 console.log(data[1].author); // 한개의 데이터
                 data.forEach(function(item){
@@ -63,6 +78,34 @@ $("button").eq(0).click(function(){
             }
         })
     })
+    // $("input").change(function(){
+    //     // input의 값을 얻어와 #length의 글자로 표현
+    //     var txt = $("input").val();
+    //     $("#length").text(txt)
+    // })
+
+    $("input").on("change",function(){  // 이벤트를 지정하기 않으면 모든 이벤트가 적용
+        var txt = $("input").val();
+        $("#length").text(txt)
+    })
+    // 카테고리 선택시 input의 max 속성값 적용하기
+    $("select").on("change", function(e){
+        // 건강 165
+        // 도전 241
+        // 사랑 48
+        // 시간 29
+        // 인간 47
+        // 계발 211
+        // 지혜 154
+        // 창의성 27
+        var cate = [165, 241, 48, 29, 47, 211, 154, 27];
+        var n = $(this).prop("selectedIndex");
+        // alert(cate[n-1]);
+        $("input").attr("max", cate[n-1])
+        var txt = $("input").val();
+        $("#length").text(txt)
+    })
+
 </script>
 </body>
 </html>

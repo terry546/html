@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤함수의 활용</title>
+    <style>
+        body {padding-bottom:100px;}
+        h1 {text-align: center;}
+        img {max-width: 100%; display: block; width:400px; height:300px;object-fit: cover;}
+        #rd {display: flex; justify-content: center; gap:10px; padding:0;max-width: 100%;}
+        #rd li { background:red; list-style: none;min-width: 100px; min-height:100px;}
+        #rd.theme1 {justify-content: space-between;}
+        #rd.theme1 li {background:green;}
+        #rd.theme2 {flex-direction: column;}
+        #rd.theme2 li {background:orange;}
+        #rd.theme3 {justify-content: center;}
+        #rd.theme3 li {background:blue;}
+        div {border:1px dashed #ccc; height:200px; position: relative;max-width: 100%; padding:0 20px 20px 0;}
+        div div{position: relative; height: 100%;}
+        div span {background:red;position: absolute;width:20px; height:20px; border-radius: 10px; transition: ease all 3s; left:50%; top:50%;}
+    </style>
+</head>
+<body>
+<h1>랜덤함수의 활용</h1>    
+<h2>랜덤이미지</h2>
+<img src="img/3d1.png">
+<h2>랜덤 디자인</h2>
+<ul id="rd">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<h2>랜덤무빙</h2>
+<div>
+    <div>
+        <span></span>
+    </div>
+</div>
+<h2>랜덤텍스트</h2>
+<p id="msg"></p>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // 랜덤이미지
+    // var ran = Math.random(); //0~1 사이값
+    // var ran = Math.ceil(Math.random() *10); //1~10 사이값
+    // var ran = Math.floor(Math.random() * 6); // 0~5
+    // var ran = Math.floor(Math.random() * 6) + 5; //5~10
+    // alert(ran)
+    var ran = Math.ceil(Math.random() *6); //1~10 사이값
+    $("img").attr("src", "img/3d"+ran+".png")
+
+    // 랜덤 디자인
+    var ran2 = Math.floor(Math.random() *3); //1~10 사이값
+    $("#rd").addClass("theme"+ran2)
+
+    // 랜덤 무빙(0~100%)
+    // setInterval(function(){
+    //     var ran3 = Math.floor(Math.random() * 101)
+    //     var ran4 = Math.floor(Math.random() * 101)
+    //     $("div span").css("top", ran3+"%")
+    //     $("div span").css("left", ran4+"%")
+    // },1000)
+
+    //랜덤텍스트
+    var ran5 = Math.floor(Math.random() *5); //0~4
+    var txt = ['안녕하세요', '어서오세요', 'hello', 'Welcome', '이라샤이마세이']
+    $("#msg").text(txt[ran5])
+    // console.log(txt[ran5])
+
+</script>
+</body>
+</html>

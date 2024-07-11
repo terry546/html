@@ -3,6 +3,39 @@
 
 document.body.style.background
     ㄴ js로 속성 접근하는거 있었는데 찾아보기
+$().attr()은 속성 값을 바꾸는 거다
+    ㄴ ex) <input type="range" min="5" max="50">
+$().css()는 css스타일을 바꾸거나 값만 가져올수 있다.
+
+27
+    ㄴ var skill_top = $("#skill").offset().top;
+        ㄴ offset 정리하기
+
+26
+    ㄴ var ran = Math.floor(Math.random() * 6) + 5; //5~10
+        ㄴ 정리하기
+    ㄴ $("img").attr("")
+        ㄴ 정리하기
+
+24
+    ㄴ var move = $(".list li").eq(0).width() + parseFloat($("#port .list").css("gap"));
+        ㄴ .css("gap")); 정리하기
+
+23
+    ㄴ menu = $("nav li").index(this)
+        ㄴ index정리하기
+    ㄴ var t = $(".menu").eq(menu).offset().top;
+        ㄴ offset정리하기
+
+22
+    ㄴ $(this).prop("selectedIndex");
+        ㄴ prop 정리하기
+    ㄴ $("input").change(function(){
+        ㄴ input게이지바 수정시 숫자가 바로 바뀌는거 정리하기
+    ㄴvar cate = [165, 241, 48, 29, 47, 211, 154, 27];
+    $("input").attr("max", cate[n-1])
+        ㄴ 정리하기
+
 
 21
     ㄴ ajax 비동기 통신
