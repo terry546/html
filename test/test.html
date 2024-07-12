@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    body {height: 3000px;}
+    @keyframes slide {
+    from {
+      top: 1000px;
+    }
+    to {
+      top: 850px;
+    }
+  }
+    #phone {background:orange; width:200px; height: 200px; position: absolute; top:1000px; left:40%; }
+
+</style>
+</head>
+<body>
+<div id="phone">dfdf</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    //
+    var phone_top = $(window).height() * 0.7;
+    console.log("phone height: "+phone_top)
+    $(window).scroll(function(){
+        var t= $(this).scrollTop();
+        console.log(t)
+        if(t>phone_top){
+            // $("#phone").css("background", "red")
+            $("#phone").css("animation", "slide 1.2s ease forwards")
+        }
+    })
+</script>
+</body>
+</html>

@@ -18,7 +18,7 @@
       }
 
       .transformex .transformex-image {
-        background: no-repeat center/contain url("./image/image1.png");
+        background: no-repeat center/contain url("./img/image1.png");
         transform: rotateZ(60deg);
         width: 8%;
         height: 9%;
@@ -27,6 +27,17 @@
         position: absolute;
         /* animation: blink_animation2 2s steps(1, end) infinite; */
       }
+      .transformex .transformex-image2 {
+        background: no-repeat center/contain url("./img/image1.png");
+        transform: translate(-50%, 0);
+        width: 8%;
+        height: 9%;
+        left: 15%;
+        top: 25%;
+        position: absolute;
+        /* animation: blink_animation2 2s steps(1, end) infinite; */
+      }
+
       .transformex2-wrap{
         width:500px;
         height:500px;
@@ -58,6 +69,7 @@
 <body>
     <div class="transformex">
         <div class="transformex-image"></div>
+        <div class="transformex-image2"></div>
     </div>
     <span>개발자 도구에서 transform 클릭하면 이미지를 UI로 돌려볼수 있다.</span>
 
