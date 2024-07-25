@@ -1,99 +1,9 @@
-모르는거 나중에 정리하기
 
-left: 0;
-
-transition-duration: 0.5s;
-transition: height 0.4s;
-    ㄴ 카테고리 4-2에서 사용했음
-
-display: inline-block;
-    ㄴ정리 하기
-
-text-align: center;
-     ㄴ 정리하기
-
-
-display: flex;
-    ㄴhtml css 50%양쪽으로 배치했을때 사용
-    ㄴ 이걸 쓰는게 적절한지 모르겠다.
-
-text-align: center;
-
-linear-gradient
-
-jQuery 05 [ image caption animation ] jQuery 이미지 캡션 애니메이션, find, filter
-    ㄴ 6:56
-    ㄴ :nth-child(1)
-    ㄴ nth-last-child(-n+2)
-    ㄴ .menu li:nth-child(1){
-    margin-right: auto;
-    }
-    /*오른쪽 메뉴 분할*/
-    .menu li:nth-child(6){
-        margin-right: auto;
-    }
-    ㄴ https://blogpack.tistory.com/859
-    ㄴ 해당글에 hover기능도 있는데 정리 해두기
-
-div, background-image 
-    ㄴ 태그나 속성등 기본적으로 부여되어있는 값 찾아보기
-
-
-홈페이지들이 body말고 wrap에 감싸져 있는데
-    ㄴ wrap없이 width:100%; 하면 넓이가 밖으로 나가서 가로 스크롤바가 생겨서 그런가?
-    ㄴ 항상 body하고 wrap에 한번더 감싸져 있어서 의문이긴 했음.
-
-div 들 여러게 있으면 중앙 정렬 하는법
-
-display: table-cell
-
-width: max-content;
-
-offsetHeight
-
-white-space: nowrap;
-
-vertical-align: baseline;
-
-display:inline
-    ㄴ 너비나 높이에 영향을 받지 않는다
-
-outline: none;
-    ㄴ outline이 뭐지 border: none과 같이 쓰는거 같은데
-
-text-align: left;
-    ㄴ naver검색창 만들때 input정렬 할떄 사용
-
-vertical-align:
-
-display:inline-flex
-
-for="search-input"
-    ㄴ for가 뭐지
-
-부모도 position: absolute; 자식도 position: absolute;일때 어떻게 속성이 적용되는거지?
-
-white-space: nowrap;
-    ㄴ 줄바꿈을 강제로 안하게 한다.
-
-
-animation: ani1 cubic-bezier(.34,.36,.45,1.3) 1.5s 1
-    ㄴ cubic-bezier애니메이션 부분정리
-
-21transform-2 파일에
-    ㄴ .transformex7:hover 부분 정리하기
-
-
-margin-top, padding-top, top 어떤 차이인지 공부 해야한다.
-    ㄴ 가시안참조반응형웹2- index3- #about #about_wrap #about_article1부분에서
-        ㄴ border를 없애니 효과가 적용이 안되서 top으로 줬음
 
 
 텍스트 정렬 이미지 정렬 차이 정리
     ㄴ flex로도 어떤 차이인지 정리하기
 
-{display: flex; flex-direction: column; flex-wrap: wrap;}
-    ㄴ 정리하기
 
 #float {overflow: hidden;}
 #float li {float:left; margin:10px;}
