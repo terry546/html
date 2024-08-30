@@ -32,12 +32,17 @@
 
         main #two #two_b { width:100%; background-image: url(./img/back.jpg); background-position: bottom left; background-repeat: no-repeat; display: flex; justify-content: center;}
         main #two #two_b #two_content {border:1px solid white; width: 1200px; height: 500px; margin: 10% 0; display: flex; ;}
-        main #two #two_b #two_content #two_left {border: 1px solid orange; width:35%; display: flex;    flex-direction: column;}
-        main #two #two_b #two_content #two_left #two_left_content1 {width:15vw; margin-bottom: 10px;}
-        main #two #two_b #two_content #two_left #two_left_content2 {width:15vw;}
+        main #two #two_b #two_content #two_left {width:35%; display: flex;    flex-direction: column;}
+        main #two #two_b #two_content #two_left #two_left_img1 {width:15vw; margin-bottom: 10px;}
+        main #two #two_b #two_content #two_left #two_left_img2 {width:15vw;}
+        main #two #two_b #two_content #two_left #two_left_text {text-align: left; color:#ffffff; font-size: 22px; font-weight: 400; line-height: 1.5em; font-family: "PretendardVariable", Sans-serif;}
+        main #two #two_b #two_content #two_left #two_left_imgbox { margin-top:80px; display: flex;}
+        /* main #two #two_b #two_content #two_left #two_left_imgbox div { } */
+        main #two #two_b #two_content #two_left #two_left_imgbox div .in_img {max-width: 80%;}
 
-        main #two #two_b #two_content #two_right {border: 1px solid yellow; width:65%; }
-        
+        main #two #two_b #two_content #two_right {border: 1px solid yellow; width:65%; display: flex; justify-content: center;}
+        /* main #two #two_b #two_content #two_right #two_right_img1 { background-image: url(./img/Asset-19-2.png); max-width: 620px; height: 100%; position: absolute;} */
+        main #two #two_b #two_content #two_right #two_right_img1 { position: absolute; }
 
         main #three {border:1px solid green; width:100%; height: 90vh;}
 
@@ -69,12 +74,23 @@
             <div id="two_b">
                 <div id="two_content">
                     <div id="two_left">
-                        <img id="two_left_content1" src="img/Asset-3.png" alt="#">
-                        <img id="two_left_content2" src="img/Asset-2.png" alt="">
-
+                        <img id="two_left_img1" src="img/Asset-3.png" alt="#">
+                        <img id="two_left_img2" src="img/Asset-2.png" alt="#">
+                        <div id="two_left_text">간편한 조리로 배달 운영 최적화 낮은 원가율과 최소 인원 운영으로 수익보장!</div>
+                        <div id="two_left_imgbox">
+                            <div>
+                                <img id="two_left_img3" class="in_img" src="img/Asset-5.png" alt="#">
+                            </div>
+                            <div>
+                                <img id="two_left_img4" class="in_img" src="img/Asset-6.png" alt="#">
+                            </div>
+                            <div>
+                                <img id="two_left_img5" class="in_img" src="img/Asset-7.png" alt="#">
+                            </div>
+                        </div>
                     </div>
                     <div id="two_right">
-
+                        <img id="#two_right_img1" src="./img/Asset-19-2.png" alt="#">
                     </div>
                 </div>
             </div>
