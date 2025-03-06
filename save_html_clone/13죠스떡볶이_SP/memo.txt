@@ -1,0 +1,4 @@
+
+
+two_left, two_right를 감싸고 있는 two_content가 위아래가 100%이다
+100%로 바꿔서 조절 해봐야 한다
