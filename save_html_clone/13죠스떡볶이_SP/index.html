@@ -46,7 +46,32 @@
         /* main #two #two_b #two_content #two_right #two_right_img1 { position: absolute; max-width: 50%; bottom: -10%;} */
         main #two #two_b #two_content #two_right #two_right_img1 { width:100%  }
 
-        main #three {border:1px solid green; width:100%; height: 90vh;}
+        /* main #three {border:1px solid green; width:100%; height: 90vh;} */
+        /* main #three {border:1px solid green;} */
+        main #three { }
+        /* main #three #three_b {width:100%; background-image: url(./img/three_back.jpg); background-repeat: no-repeat; max-height: 800px; min-height: 800px; border:1px solid green; display: flex; justify-content: space-around; flex-direction:row} */
+        main #three #three_b {width:100%; background-image: url(./img/three_back.jpg); background-repeat: no-repeat; max-height: 800px; min-height: 800px; border:1px solid green; display: flex; justify-content: space-around; flex-direction:row}
+        main #three #three_b #three_content { border:1px solid red; display: flex; max-width: 1300px; min-height: 800px;}
+        main #three #three_b #three_content #three_left {border: 1px solid orange; display: flex;justify-content: center; align-items: flex-end; width:60%;}
+        /* main #three #three_b #three_content #three_left {background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat; background-size: 150% auto; width:80%;} */
+
+        main #three #three_b #three_content #three_left #three_left_img1 { max-width: 90%;}
+        /* main #three #three_b #three_content #three_left #three_left_img1 { background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat; background-size: 90% auto; } */
+        /* main #three #three_b #three_content #three_left #three_left_img1 { background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat;  width:50%; height: 50%; } */
+
+
+        
+
+        main #three #three_b #three_content #three_right {display: flex; flex-direction: column; justify-content: center; margin: 0 0 0 0; padding: 0 0 0 0;}
+        main #three #three_b #three_content #three_right #tr_content1 { width: 15vw; margin-bottom: 10px;}
+        main #three #three_b #three_content #three_right #tr_content2 { width: 19vw;}
+        main #three #three_b #three_content #three_right #tr_content3 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5em; margin-right: -15vw;}
+        main #three #three_b #three_content #three_right #tr_content4 { width: 11vw; margin-top: 100px;}
+
+
+        
+        #four{border: 1px solid green; height: 500px;}
+        
 
     </style>
 </head>
@@ -98,7 +123,21 @@
             </div>
         </section>
         <section id="three">
-            <div></div>
+            <div id="three_b">
+                <div id=three_content>
+                    <div id="three_left">
+                        <img id="three_left_img1" src="./img/Asset-18.png" alt="">
+                         <!-- <div id="three_left_img1"></div> -->
+                    </div>
+                    <div id="three_right">
+                        <img id="tr_content1" src="./img/Asset-16.png" alt="">
+                        <img id="tr_content2" src="./img/Asset-15.png" alt="">
+                        <div id="tr_content3">죠스 Topokki 논현본점 매장 오픈 후,<br>3개월만에 분식 카테고리 맛집랭킹 1위!</div>
+                        <img id="tr_content4" src="./img/hot_and_sweet.png" alt="">
+                    </div>
+                    
+                </div>
+            </div>
         </section>
         <section id="four">
         </section>
