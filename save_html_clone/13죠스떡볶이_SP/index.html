@@ -48,7 +48,7 @@
 
         /* main #three {border:1px solid green; width:100%; height: 90vh;} */
         /* main #three {border:1px solid green;} */
-        main #three { }
+        main #three {  }
         /* main #three #three_b {width:100%; background-image: url(./img/three_back.jpg); background-repeat: no-repeat; max-height: 800px; min-height: 800px; border:1px solid green; display: flex; justify-content: space-around; flex-direction:row} */
         main #three #three_b {width:100%; background-image: url(./img/three_back.jpg); background-repeat: no-repeat; max-height: 800px; min-height: 800px; border:1px solid green; display: flex; justify-content: space-around; flex-direction:row}
         main #three #three_b #three_content { border:1px solid red; display: flex; max-width: 1300px; min-height: 800px;}
@@ -59,9 +59,6 @@
         /* main #three #three_b #three_content #three_left #three_left_img1 { background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat; background-size: 90% auto; } */
         /* main #three #three_b #three_content #three_left #three_left_img1 { background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat;  width:50%; height: 50%; } */
 
-
-        
-
         main #three #three_b #three_content #three_right {display: flex; flex-direction: column; justify-content: center; margin: 0 0 0 0; padding: 0 0 0 0;}
         main #three #three_b #three_content #three_right #tr_content1 { width: 15vw; margin-bottom: 10px;}
         main #three #three_b #three_content #three_right #tr_content2 { width: 19vw;}
@@ -70,7 +67,26 @@
 
 
         
-        #four{border: 1px solid green; height: 500px;}
+        main #four{ width:100% }
+        main #four #four_b { width:100%; background-image: url(./img/bg.jpg); background-repeat: no-repeat;background-position: bottom left; display: flex; justify-content: center;}
+        /* main #four #four_b #four_content { width:80%; height: 1010px; display: flex; justify-content: center; align-items: center; }  */
+        main #four #four_b #four_content {  max-width: 1300px; min-height: 110vh; display: flex; justify-content: center; align-items: center; } 
+        /*  ㄴ 내가 보고 만들어 보고 나중에 적용 시키기 */
+        main #four #four_b #four_content #four_left { display: flex; flex-direction: column; justify-content: center; max-width: 1300px; min-height: 110vh; width:43% }
+        main #four #four_b #four_content #four_left #fl_content1 { text-align: left;color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 700; line-height: 1.5em; margin-bottom: 12px;}
+        main #four #four_b #four_content #four_left #fl_content2 { width:16vw; margin-bottom: 10px;}
+        main #four #four_b #four_content #four_left #fl_content3 { text-align: left; color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5em; margin-bottom: 80px}
+        main #four #four_b #four_content #four_left #fl_content4 { width:10vw }
+
+        main #four #four_b #four_content #four_right { display: flex; justify-content: center; align-items: center; max-width: 800px; }
+        main #four #four_b #four_content #four_right #tr_content1 { width:98% }
+        /* main #four #four_b #four_content #four_right #tr_content1 { width:86vw;  } */
+    
+
+
+
+
+
         
 
     </style>
@@ -140,6 +156,19 @@
             </div>
         </section>
         <section id="four">
+            <div id="four_b">
+                <div id="four_content">
+                    <div id="four_left">
+                        <div id="fl_content1">죠스 Topokki 리얼리뷰</div>
+                        <img id="fl_content2" src="./img/Asset-10-1.png" alt="">
+                        <div id="fl_content3">논현본점 기준 월 300개의 고객리뷰</div>
+                        <img id="fl_content4" src="./img/real_review.png" alt="">
+                    </div>
+                    <div id="four_right">
+                        <img id="tr_content1" src="./img/Asset-23.png" alt="">
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="five">
         </section>
