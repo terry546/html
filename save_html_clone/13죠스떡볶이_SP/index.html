@@ -72,7 +72,8 @@
         /* main #four #four_b #four_content { width:80%; height: 1010px; display: flex; justify-content: center; align-items: center; }  */
         main #four #four_b #four_content {  max-width: 1300px; min-height: 110vh; display: flex; justify-content: center; align-items: center; } 
         /*  ㄴ 내가 보고 만들어 보고 나중에 적용 시키기 */
-        main #four #four_b #four_content #four_left { display: flex; flex-direction: column; justify-content: center; max-width: 1300px; min-height: 110vh; width:43% }
+        /* main #four #four_b #four_content #four_left { display: flex; flex-direction: column; justify-content: center; max-width: 1300px; min-height: 110vh; width:43% } */
+        main #four #four_b #four_content #four_left { display: flex; flex-direction: column; justify-content: center;  width:43% }
         main #four #four_b #four_content #four_left #fl_content1 { text-align: left;color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 700; line-height: 1.5em; margin-bottom: 12px;}
         main #four #four_b #four_content #four_left #fl_content2 { width:16vw; margin-bottom: 10px;}
         main #four #four_b #four_content #four_left #fl_content3 { text-align: left; color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5em; margin-bottom: 80px}
@@ -81,11 +82,29 @@
         main #four #four_b #four_content #four_right { display: flex; justify-content: center; align-items: center; max-width: 800px; }
         main #four #four_b #four_content #four_right #tr_content1 { width:98% }
         /* main #four #four_b #four_content #four_right #tr_content1 { width:86vw;  } */
-    
 
+        main #five { width:100%}
+        main #five #five_b { background-image: url(img/bg-1.jpg); background-position: bottom left; display: flex; justify-content: center;}
+        main #five #five_content {max-width: 1300px; min-height: 115vh; display: flex; flex-direction: column; justify-content: center; border:1px solid red; }
 
+        main #five #five_content #five_one { display: flex; justify-content: space-between; margin-bottom: 50px; }
 
+        /* main #five #five_content #five_one_left { display: flex; flex-direction: column; margin-right:50% } */
+        main #five #five_content #five_one_left { display: flex; flex-direction: column; margin-left:0%; }
+        main #five #five_content #five_one_left #fo_content1 { width:13vw; margin-bottom: 10px; }
+        main #five #five_content #five_one_left #fo_content2 { width:15vw; margin-bottom: 10px;}
+        main #five #five_content #five_one_left #fo_content3 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5em; width:150%;}
 
+        main #five #five_content #five_one_right { display: flex; justify-content: flex-end; margin-left:0% }
+        main #five #five_content #five_one_right img { max-width: 80%;  }
+
+        main #five #five_content #five_two #ft_content1 {  }
+        main #five #five_content #five_two #ft_content2 { position: absolute; z-index: -1; }
+
+        main #six {}
+        main #six #six_b { background-color: #FAF1DD;}
+
+        
 
         
 
@@ -171,8 +190,35 @@
             </div>
         </section>
         <section id="five">
+            <div id="five_b">
+                <div id="five_content">
+                    <div id="five_one">
+                        <div id="five_one_left">
+                            <img id="fo_content1" src="./img/Asset-26.png" alt="">
+                            <img id="fo_content2" src="./img/Asset-27.png" alt="">
+                            <div id="fo_content3">10평대 소규모 배달형 매장에서도<br>
+                                안정적인 매출을 약속합니다</div>
+                        </div>
+                        <div id="five_one_right">
+                            <img src="./img/20230824_145510400.jpg" alt="">
+                        </div>
+                    </div>
+                    <div id="five_two">
+                        <div id="ft_content1">
+                            <img id="ft_content2" src="./img/Asset-10-80-1.jpg" alt="">
+                            <img id="ft_content3" src="./img/bg2.jpg" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="six">
+            <div id="six_b">
+                <div id="six_content">
+                    <div>죠스 Topokki만의</div>
+                </div>
+            </div>
         </section>
         <section id="servn">
         </section>

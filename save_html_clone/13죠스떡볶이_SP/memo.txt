@@ -1,5 +1,4 @@
-main #four #four_b #four_content {  display: flex; justify-content: center; align-items: center; max-width: 1300px; min-height: 110vh;} 
-  ㄴ 정리하기 
+vw px % 차이 정리하기
 
 two_left, two_right를 감싸고 있는 two_content가 위아래가 100%이다
 100%로 바꿔서 조절 해봐야 한다
