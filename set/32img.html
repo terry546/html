@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+        #eximg2 { width:10%;  display: block;}
+        #st_content1 { display: flex; max-width: 1252px;}
+        #st_content1 img { width:50%}
     </style>
 </head>
-img태그에는 이미지를 넣어줘야 사용자 보는창이 작아 졌을때 크기에 맞춰서 줄어든다
+<!-- img태그에는 이미지를 넣어줘야 사용자 보는창이 작아 졌을때 크기에 맞춰서 줄어든다
     ㄴ img태그는 너비 높이 줄 필요가 없다
 
-img태그를 이동할떄는 translate:0% 25%;를 이용해서 이동시키면 된다
+img태그를 이동할떄는 translate:0% 25%;를 이용해서 이동시키면 된다 -->
 <body>
-    
+    <img width="50%" height="100%" src="./img/eximg.jpg" style="margin-top: 50px; margin-left: 50px; object-position: center; object-fit: cover;">
+    <!--  
+     object position, fit
+            ㄴobject-position: center; 
+            ㄴobject-fit: cover;
+         
+         ㄴ mdn문서 참고시 다른 속성이 더있음 srcset, resize등등
+    -->
+        
+    <img id="eximg2" src="./img/logo_01.png"  alt="#">
+        <!--화면 넓이에 이미지 크기를 자동 조정 하려면
+                ㄴ img태그에 width만 %로 주면 된다.  -->
+
 </body>
 </html>

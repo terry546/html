@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#six_two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Automatically adjust the number of columns */
+    gap: 10px; /* Adjust the gap between images */
+}
+
+#six_two img {
+    width: 100%; /* Ensure each image fills its grid cell */
+    height: auto;
+    object-fit: cover; /* Make sure the images fill their cells without distortion */
+}
+</style>
+<body>
+
+    <section id="six">
+        <div id="six_b">
+            <div id="six_content">
+                <div id="six_two">
+                    <!-- object-fit: contain; object-fit: scale-down;  -->
+                    <img src="./img/Interior1.jpg"  alt="">
+                    <img src="./img/Interior2.jpg" alt="">
+                    <img src="./img/Interior3.jpg" alt="">
+                    <img src="./img/Asset-17-83.jpg" alt="">
+                    <img src="./img/Interior4.jpg" alt="">
+                    <img src="./img/Interior5.jpg" alt="">
+                    <img src="./img/Interior6.jpg" alt="">
+                    <img src="./img/Interior7.jpg" alt="">
+                    <img src="./img/Interior8.jpg" alt="">
+                    <img src="./img/Interior9.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>

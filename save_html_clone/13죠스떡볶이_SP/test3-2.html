@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+        body {font-family: Arial, sans-serif;}
+        header {position: fixed;top: 0;left: 0;right: 0;background-color: #333;color: white;text-align: center;padding: 10px 0;transition: height 0.3s;}
+        nav ul {list-style-type: none;}
+        nav ul li {display: inline;margin: 0 15px;}
+        nav ul li a {color: white;text-decoration: none;}
+        .content {margin-top: 100px; /* 메뉴 바 아래 여백 */padding: 20px;}
+        h1 {margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <header id="menu">
+      <nav>
+        <ul>
+          <li><a href="#">홈</a></li>
+          <li><a href="#">서비스</a></li>
+          <li><a href="#">소개</a></li>
+          <li><a href="#">연락처</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <div class="content">
+      <h1>스크롤을 내려보세요!</h1>
+      <p>스크롤을 내리면 메뉴 바가 변하는 것을 확인할 수 있습니다.</p>
+      <!-- 이곳에 내용 추가 -->
+      <div style="height: 2000px;">
+        <p>스크롤을 많이 내리세요!</p>
+      </div>
+    </div>
+  
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+        const menu = document.getElementById('menu');
+        const scrollHeight = window.scrollY;
+        // console.log(100* 0.1)
+
+        // 스크롤 높이에 따라 메뉴의 높이 조절
+        if (scrollHeight >= 200 && scrollHeight <= 500) {  // 스크롤 높이가 300 이상 500보다 작으면
+            // menu.style.height = `${100 + (scrollHeight - 100) * 0.1}px`;
+            menu.style.height = `${90 + (scrollHeight - 100) * 0.1}px`;
+              // 1. scrollHeight가 200일 때, 이 식에서 (scrollHeight - 100) 부분은 (200 - 100)이 되어 100이 됩니다.
+              // 2. 이제 이 값을 0.1배로 곱하면 100 * 0.1 = 10이 됩니다.
+              // 3. 그래서 최종적으로 메뉴의 높이는 100 + 10 = 110px로 설정됩니다.
+            // console.log(menu)
+            
+        } else if (scrollHeight > 500) {
+            menu.style.height = '300px'; // 500 이상은 500으로 고정
+        } else {
+            menu.style.height = '100px'; // 스크롤이 100 미만일 때 기본 높이
+        }
+    });
+    </script>
+    <script>
+      // $(window).scroll(function() {
+      //   let value = $(this).scrollTop();
+      //   console.log(value)
+      // })
+    </script>
+  </body>
+</html>
