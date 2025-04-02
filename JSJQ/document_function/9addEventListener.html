@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {height: 10000px;}
+    </style>
 </head>
 <!-- 
 addEventListener()인터페이스의 메소드는 
@@ -25,6 +28,16 @@ document.querySelector("#add").innerHTML = "<button>동적요소</button>";
 document.querySelector("#add").addEventListener("click",function(){
         alert();
     })
+
+// window.addEventListener('scroll', function() {
+//   let value = window.scrollY;
+//   console.log(value);
+// });
+
+$(window).scroll(function() {
+    let value = $(this).scrollTop();
+    console.log(value)
+})
 
 </script>
 </body>

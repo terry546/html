@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parents { background-image: url(./img/Asset-10-80.jpg); background-size: fill; width:100%;background-position: center left; background-repeat: no-repeat;  }
+
+    #parents #child1 { max-width: 1250px; min-height: 90vh; display: flex; justify-content: center; margin: 0 auto; align-items: center;}
+
+    #parents #child1 #child2 {display: flex; flex-direction: column; margin-bottom: 110px;}
+    #parents #child1 #child2 #child3 {width:10vw}
+    #parents #child1 #child2 #child4 {max-width: 80%;}
+    #parents #child1 #child2 #child5 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 25px; font-weight: 400; line-height: 1.5em; }
+
+    #parents #child1 #child6 {width:65%; z-index: 1; height: 100%;}
+    #parents #child1 #child6 img {position: relative; right:-35%; top: -15vh; }
+    /* #parents #child1 #child6 img {position: relative; right:-35%; top: -15%; } */
+
+
+    #parents #child1 #seven_b2 {background: url(./img/food_img.png); background-position: bottom right; background-repeat: no-repeat; background-size: contain; height: 90%; width:100%; position: absolute;}
+
+  </style>
+</head>
+<body>
+  <!-- 
+  
+
+  결과: 부모에 공간에 있으면 top: 15%로 이동이 가능한데
+  #parents #child1 #child6태그에 height값이 적용이 안되어 있다.
+  #parents #child1 #child6 img태그 속성값을 15vh로 이동 시켜주면 된다
+  
+  
+  -->
+ <div id="parents">
+  <div id="child1">
+      <div id="child2">
+          <img id="child3" src="./img/more.png" alt="">
+          <img id="child4" src="./img/Asset-3-2.png" alt="">
+          <div id="child5">HOT한 메뉴들이 더 맛있게 돌아왔다.<br>
+              매운맛도 3단계로 조절가능!
+          </div>
+      </div>
+      <div id="child6">
+          <img src="./img/hot_and_sweet-1.png" alt="">
+      </div>
+      <div id="seven_b2"></div>
+  </div>
+</div>
+
+
+  
+  
+</body>
+</html>

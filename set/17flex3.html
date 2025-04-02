@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* #parents { display: flex; width: 100%} */
+
+        #child1 { border:1px solid yellow; max-width: 750px; min-height: 90vh; display:flex ; justify-content: space-around; margin: 0 auto;}
+        /* #child1 { border:1px solid yellow; width: 750px; min-height: 90vh; display:flex ; justify-content: space-around} */
+        
+        #child2 { border: 1px solid blue; }
+        #child2 div { width:50px; height: 50px;  border:1px solid green}
+        
+        #child3 { border: 1px solid indianred  }
+        #child3 div { width:50px; height: 50px;  border:1px solid purple}
+
+
+
+    </style>
+</head>
+<body>
+    <!-- 
+    부모, 첫번째 자식태그, 두번쨰 자식태그 코드에 
+    첫번째 자식에 max-width값이 있고
+    부모에 display:flex 값을 주면 첫번째 자식 max-width 값에 영향을 주는가? 
+
+    결과: 첫번째 자식에 max-width로 주면 justify-content: space-around가 적용이 안되고
+    max-width를 width로 바꿔주면 justify-content: space-around가 적용된다
+
+    해결 방법은 max-width가 적용된 태그에 margin: 0 auto;로 줘서 max-width값도 적용 시키면 된다
+    -->
+
+    <div id="parents">
+        <div id="child1">
+            <div id="child2">
+                <div></div>
+                <div></div>
+            </div>
+            <div id="child3">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
