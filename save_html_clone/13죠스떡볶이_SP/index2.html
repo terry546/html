@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>죠스떡볶이</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {margin:0; padding:0; list-style: none; box-sizing: border-box;}
         header { background: url("./img/header_bg.png") center/cover; width:100%; height:110px; display: flex; align-items: center; position: fixed; z-index: 3;}
@@ -167,6 +168,33 @@
 
         main #nine #nine_b #nine_content #nine_two {  }
         main #nine #nine_b #nine_content #nine_two #nt_content1 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 25px; font-weight: 600; line-height: 1.5em; margin-top:315px; margin-left:100px;}
+
+        /* main #bottom_banner { position: fixed; bottom:0; width:100%; } */
+        main #bottom_banner { position: fixed; bottom:0; width:100%; display: none;}
+
+        main #bottom_banner #cross_icon{position: absolute; right:20px; top:20px;}
+
+        main #bottom_banner #bb_b { background-color: #FFC600; }
+        main #bottom_banner #bb_b #bb_content { display: flex; justify-content: center; align-items: center; max-width: 1200px; min-height: 160px; margin: 0 auto;}
+
+        main #bottom_banner #bb_b #bb_content #bb_content1 { width:20%; margin-right: 5%;}
+        main #bottom_banner #bb_b #bb_content #bb_content1 p:nth-child(1) { color: #C91518; font-family: "Noto Sans KR", Sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -1px; line-height: 1;}
+        main #bottom_banner #bb_b #bb_content #bb_content1 p:nth-child(2) { color: #1A1A1A; font-family: "Noto Sans KR", Sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1;}
+
+        main #bottom_banner #bb_b #bb_content #bb_content2 {display: flex; width:100%}
+        main #bottom_banner #bb_b #bb_content #bb_content2 textarea:nth-child(1) { width: 30%; height: 43px; margin-right: 2%;}
+        main #bottom_banner #bb_b #bb_content #bb_content2 textarea:nth-child(2) { width: 35%; height: 43px; margin-right: 2%;}
+        main #bottom_banner #bb_b #bb_content #bb_content2 select { width: 15%; height: 43px; margin-right: 2%;}
+        main #bottom_banner #bb_b #bb_content #bb_content2 button { width: 25%;}
+
+        /* main #bottom_banner #bb_b #bb_content #bb_content2 #bb_content2_2 {position: absolute; top:120px;  width:70%; text-align: center;} */
+
+        @keyframes bottom_slide_up { 
+            from {transform: translateY(100%);} to {transform: translateY(0);}
+        }
+        @keyframes bottom_slide_down { 
+            from {transform: translateY(0%);} to {transform: translateY(100%);}
+        }
 
         footer { }
         footer #f_one_b { background-color: #C91518; }
@@ -359,6 +387,25 @@
                 </div>
             </div>
         </section>
+        <section id="bottom_banner">
+            <i id="cross_icon" class="fa-solid fa-xmark"></i>
+            <div id="bb_b">
+                <div id="bb_content">
+                    <div id="bb_content1">
+                        <p>창업문의</p>
+                        <p>1688-2868</p>
+                    </div>
+                    <div id="bb_content2">
+                        <textarea name="" id=""></textarea>
+                        <textarea name="" id=""></textarea>
+                        <select name="" id="">
+
+                        </select>
+                        <button>신청하기</button>
+                    </div> 
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <section id="f_one">
@@ -377,5 +424,39 @@ Powered by JAWSFOOD ALL RIGHTS RESERVED.
             </div>
         </section>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let hei = $("#six").offset().top;
+        let up_banner = hei - ($(window).height()*0.1)
+        console.log(hei)
+        console.log(up_banner)
+        let play= false // 한번 실행되면 실행 안되게 불리언 값 주기
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            console.log(value);
+            console.log(play);
+            
+
+            if(value > up_banner && !play){
+                let bottom_banner = document.getElementById("bottom_banner");
+                bottom_banner.style.display= "block"
+                bottom_banner.style.animation = "bottom_slide_up 1s";
+                play=true;
+            }
+        })
+        
+        // 크로스 버튼을 누르면 바텀 배너가 내려가기 하기
+        document.getElementById("cross_icon").onclick= function(){
+            // 내려가는 애니메이션 만들어 주기
+            document.getElementById("bottom_banner").style.animation="bottom_slide_down 1s";
+            setTimeout(function(){
+                document.getElementById("bottom_banner").style.display="none" 
+            },900)
+        }
+    </script>
+    <script>
+        
+    </script>
 </body>
 </html>

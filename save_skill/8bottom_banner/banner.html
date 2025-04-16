@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parents { border:1px solid red; width:1px; margin:0 auto }
+        #child { height: 2000px; }
+
+    </style>
+
+</head>
+<body>
+    <header></header>
+    <div id="parents">
+        <div id="child"></div>
+        <div id="child2"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        let hei= $("#child2").offset().top;
+        let up_banner = hei - ($(window).height()*1.5);
+        console.log($(window).height()*1.5, hei)
+        console.log(up_banner)
+
+        $(window).scroll(function() {
+          let value = $(this).scrollTop();
+        // body나 태그 높이에 맞춰서 value보다 값이 커졌을때 배너가 나오게 해야한다.
+          if(700< value){
+            // document.getElementById("parents").style.border = "1px solid green";
+            
+
+          }
+          console.log(value)
+        })
+
+        // 높이값을 구해서 일정 높이보다 높아지면 배너가 나오는 기능을 구현
+        
+
+        // jquery로 element's(요소)의 높이를 측정하는 방법은 아래의 4가지 방법이 있습니다. 
+
+        // jquery.height() : 내부높이
+        // jquery.innerHeight() : 내부높이 + padding
+        // jquery.outerHeight() : 내부높이 + padding + border
+        // jquery.outerHeight(true) : 내부높이 + padding + border + margin
+        // 출처: https://ux.stories.pe.kr/167 [UX 공작소:티스토리]
+    </script>
+</body>
+</html>

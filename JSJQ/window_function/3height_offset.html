@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parents { border:1px solid red; width:1px; margin:0 auto }
+        #child { height: 2000px; }
+    </style>
+</head>
+<body>
+    <div id="parents">
+        <div id="child"></div>
+        <div id="child2"></div>
+    </div>
+
+    <footer>
+        <section id="bottom_banner">
+            <div id="bb_wrap">
+                <div id="bb_b">
+
+                </div>
+            </div>
+        </section>
+    </footer>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let hei= $("#child2").offset().top;
+        let up_banner = hei - ($(window).height()*1.5);
+        console.log($(window).height()*1.5, hei)
+        console.log(up_banner)
+        
+        // jquery.height() : 내부높이
+        // jquery.innerHeight() : 내부높이 + padding
+        // jquery.outerHeight() : 내부높이 + padding + border
+        // jquery.outerHeight(true) : 내부높이 + padding + border + margin
+        // 출처: https://ux.stories.pe.kr/167 [UX 공작소:티스토리]
+    </script>
+</body>
+</html>
