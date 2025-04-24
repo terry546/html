@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; list-style: none; box-sizing: border-box; }
+        header { 
+            background: url("./img/header_bg.png") center/cover; 
+            width: 100%; 
+            height: 110px; 
+            display: flex; 
+            align-items: center; 
+            position: fixed; 
+            z-index: 3;
+            transition: background 0.3s ease;
+        }
+        header #header_b { 
+            display: flex; 
+            align-items: center;
+            width: 100%;
+        }
+        header #header_b #logo_left { 
+            width: 11%; 
+            position: absolute; 
+            left: 6%;
+            transition: transform 0.3s ease;
+        }
+        header #header_b #logo_left #logo { 
+            width: 100%; 
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        header #header_b ul { 
+            display: flex; 
+            position: absolute; 
+            right: 22%; 
+            transition: transform 0.3s ease;
+        }
+        header #header_b ul li { 
+            padding: 0px 30px;
+        }
+        header #header_b ul li a { 
+            font-size: 25px; 
+            color: black; 
+            font-weight: 800; 
+            text-decoration: none;
+            transition: font-size 0.3s ease;
+        }
+        header #header_b #logo_right { 
+            position: absolute; 
+            right: 13%; 
+            background-color: rgb(201, 21, 24); 
+            border-radius: 10px; 
+            width: 8%; 
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        header #header_b #logo_right #logo { 
+            width: 100%; 
+            height: 100%; 
+            padding: 8.5% 20%;
+            transition: transform 0.3s ease;
+        }
+        @keyframes top_banner_up { from { height: 110px; } to { height: 80px; } }
+        @keyframes top_banner_down { from { height: 80px; } to { height: 110px; } }
+        #parents { border: 1px solid red; width: 1px; margin: 0 auto }
+        #child { height: 2000px; }
+        #bb_wrap { height: 160px; background: rgb(223, 191, 191); width: 1000px; bottom: 0px; position: fixed; display: none; }
+        #bb_wrap #i_cross { position: absolute; right: 0; margin: 10px 10px 0 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header_b">
+            <a id="logo_left" href="#">
+                <img id="logo" src="./img/logo_01.png" alt="#">
+            </a>
+            <ul>
+                <li><a href="#">Brand</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Join</a></li>
+            </ul>
+            <a id="logo_right" href="#">
+                <img id="logo" src="./img/jawsfood.png" alt="#">
+            </a>
+        </div>
+    </header>
+    <div id="parents">
+        <div id="child"></div>
+        <div id="child2"></div>
+    </div>
+    <footer>
+        <section id="bottom_banner">
+            <div id="bb_wrap">
+                <img id="i_cross" src="./img/port_iconCloseB.svg" alt="">
+                <div id="bb_b"></div>
+            </div>
+        </section>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let header = document.querySelector("header").getBoundingClientRect().top + window.scrollY;
+        console.log("header", header);
+
+        window.addEventListener('scroll', function() {
+            let scroll_hv = window.scrollY;
+            console.log(scroll_hv);
+
+            // 크기를 줄여줄 스크롤 거리 범위 설정
+            let scale_factor = Math.max(1 - scroll_hv / 500, 0.5); // 500px 스크롤마다 50% 크기 줄이기 (최소 50%)
+
+            // 로고 크기와 메뉴 글자 크기 조절
+            document.querySelector("#logo_left #logo").style.transform = `scale(${scale_factor})`;
+            document.querySelector("#logo_right #logo").style.transform = `scale(${scale_factor})`;
+            document.querySelector("header #header_b ul").style.transform = `scale(${scale_factor})`;
+            document.querySelector("header #header_b ul").style.fontSize = `${25 * scale_factor}px`;
+
+            if (header < scroll_hv) {
+                document.querySelector("header").style.animation = "top_banner_up 1s";
+                setTimeout(function() {
+                    document.querySelector("header").style.height = "80px";
+                }, 950);
+                document.querySelector("header").style.background = "black";
+            } else {
+                document.querySelector("header").style.animation = "top_banner_down 1s";
+                setTimeout(function() {
+                    document.querySelector("header").style.height = "110px";
+                }, 950);
+                document.querySelector("header").style.background = "url('./img/header_bg.png') center/cover";
+            }
+        });
+    </script>
+</body>
+</html>

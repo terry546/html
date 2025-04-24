@@ -15,21 +15,21 @@
         <div id="child2"></div>
     </div>
 
-    <footer>
-        <section id="bottom_banner">
-            <div id="bb_wrap">
-                <div id="bb_b">
-
-                </div>
-            </div>
-        </section>
-    </footer>
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        let hei= $("#child2").offset().top;
+        window.addEventListener('scroll', function(){
+            let value= window.scrollY;
+            console.log(value)
+        })
+        
+
+
+        // let hei= $("#child2").offset().top;
+        let hei = document.getElementById("child2").getBoundingClientRect().top + window.scrollY;
         let up_banner = hei - ($(window).height()*1.5);
+        console.log("as"+hei)
         console.log($(window).height()*1.5, hei)
         console.log(up_banner)
         

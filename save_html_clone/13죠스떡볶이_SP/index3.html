@@ -9,15 +9,24 @@
         * {margin:0; padding:0; list-style: none; box-sizing: border-box;}
         /* header { background: url("./img/header_bg.png") center/cover; width:100%; height:110px; display: flex; align-items: center; position: fixed; z-index: 3;} */
         /* 백그라운드 #C91518 주기*/
-        header { background: url("./img/header_bg.png") center/cover; width:100%; height:110px; display: flex; align-items: center; position: fixed; z-index: 3;}
-        header #logo_left {width:11%; position: absolute; left:6%;}
-        header #logo_left #logo {width:100%; height:100%;}
-        
-        header ul {display: flex; position: absolute; right:22%; }
-        header ul li { padding: 0px 30px;}
-        header ul li a { font-size:25px; color:black; font-weight: 800; text-decoration: none;}
-        header #logo_right {position: absolute; right: 13%; background-color:rgb(201,21,24); border-radius: 10px; width:8%; display: flex;}
-        header #logo_right #logo {width:100%; height:100%; padding: 8.5% 20%; }
+        header { position: fixed; width:100%; z-index: 2;}
+        /* header #header_b { background: url('./img/header_bg.png') center/cover; display: flex; justify-content: center; height: 110px;} */
+        header #header_b { background: url('./img/header_bg.png'); background-position: center center; background-size: cover; display: flex; justify-content: center; height: 110px; padding: 0% 6% 0% 6%; }
+        /* header #header_b #header_content { display: flex; } */
+        header #header_b #header_content { display: flex; transition: transform 0.3s ease; /* 부드러운 스케일 애니메이션 */ transform-origin: center center; /* 스케일 기준점 */}
+
+        header #header_b #header_content #hc_one { width:33.333%; display: flex; align-items: center; justify-content: flex-start; padding:10px;}
+        header #header_b #header_content #hc_one img { width:40%; }
+
+        header #header_b #header_content #hc_two { width: 49.666%; display: flex; padding:10px}
+        header #header_b #header_content #hc_two ul { margin-left:auto; display: flex; align-items: center; }
+        header #header_b #header_content #hc_two ul li { margin-right:50px }
+        header #header_b #header_content #hc_two ul li a { font-size:25px; color:black; font-weight: 800; text-decoration: none; }
+
+        header #header_b #header_content #hc_three { width:10%; display: flex; align-items: center; padding:10px; }
+        header #header_b #header_content #hc_three #hc_three_content { background: #C91518; border-radius: 10px; padding:10px; display: flex;}
+        header #header_b #header_content #hc_three #hc_three_content a { display: flex; }
+        header #header_b #header_content #hc_three #hc_three_content a img { max-width:80%; margin:0 auto}
         /* @keyframes top_banner_up {from{transform:translateY(100%) to {transform:translateY(80%)}}} */
         @keyframes top_banner_up {from{height: 110px;} to {height:80px}}
         @keyframes top_banner_down {from{height: 80px;} to {height:110px}}
@@ -175,7 +184,7 @@
         main #nine #nine_b #nine_content #nine_two #nt_content1 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 25px; font-weight: 600; line-height: 1.5em; margin-top:315px; margin-left:100px;}
 
         /* main #bottom_banner { position: fixed; bottom:0; width:100%; } */
-        main #bottom_banner { position: fixed; bottom:0; width:100%; display: none;}
+        main #bottom_banner { position: fixed; bottom:0; width:100%; display: none;z-index: 2;}
 
         main #bottom_banner #cross_icon{position: absolute; right:20px; top:20px;}
 
@@ -214,18 +223,28 @@
 </head>
 <body>
     <header>
-        <a id="logo_left" href="#">
-            <img id="logo" src="./img/logo_01.png" alt="#">
-        </a>
-        <ul>
-            <li><a href="#">Brand</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Store</a></li>
-            <li><a href="#">Join</a></li>
-        </ul>
-        <a id="logo_right" href="#">
-            <img id="logo" src="./img/jawsfood.png" alt="#">
-        </a>
+        <div id="header_b">
+            <div id="header_content">
+                <div id="hc_one">
+                    <img src="./img/logo_01.png" alt="">
+                </div>
+                <div id="hc_two">
+                    <ul>
+                        <li><a href="#">Brand</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Store</a></li>
+                        <li><a href="#">Join</a></li>
+                    </ul>
+                </div>
+                <div id="hc_three">
+                    <div id="hc_three_content">
+                        <a href="#">
+                            <img src="./img/jawsfood.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <section id="one">
@@ -433,23 +452,40 @@ Powered by JAWSFOOD ALL RIGHTS RESERVED.
     <script>
         let header= document.querySelector("header").getBoundingClientRect().top+window.scrollY;
         console.log("header"+header)
-
+    
         window.addEventListener('scroll', function(){
             let scroll_hv = window.scrollY;
-            console.log(scroll_hv)
-
+            console.log(scroll_hv);
+    
+            let headerContent = document.querySelector("#header_content");
+    
+            // 최대 크기: 1, 최소 크기: 0.9
+            let scaleValue = 1;
+    
+            if (scroll_hv > header) {
+                scaleValue = 1 - ((scroll_hv - header) * 0.00015); // 감소율 조정 가능
+    
+                if (scaleValue < 0.9) {
+                    scaleValue = 0.9; // 최소 크기 제한
+                }
+                // 이 코드는 바깥 if문 안에 있음 → 계속 실행됨
+                console.log("스크롤로 인한 스케일 조정:", scaleValue);
+            }
+    
+            headerContent.style.transform = `scale(${scaleValue})`;
+    
             if(header < scroll_hv){
-                document.querySelector("header").style.animation="top_banner_up 1s"
+                document.querySelector("header #header_b").style.animation="top_banner_up 1s"
                 setTimeout(function(){
-                    document.querySelector("header").style.height="80px"
+                    document.querySelector("header #header_b").style.height="80px"
                 },950)
-                document.querySelector("header").style.background="black"
+                document.querySelector("header #header_b").style.background="black"
             }else{
-                document.querySelector("header").style.animation="top_banner_down 1s"
+                document.querySelector("header #header_b").style.animation="top_banner_down 1s"
                 setTimeout(function(){
-                    document.querySelector("header").style.height="110px"
+                    document.querySelector("header #header_b").style.height="110px"
                 },950)
-                document.querySelector("header").style.background="url('./img/header_bg.png') center/cover"
+                document.querySelector("header #header_b").style.background="url('./img/header_bg.png') center/cover"
             }
         })
     </script>

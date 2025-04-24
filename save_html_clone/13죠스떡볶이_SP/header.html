@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+* {margin:0; padding:0; list-style: none; box-sizing: border-box;}
+header { position: fixed; width:100%;}
+/* header #header_b { background: url('./img/header_bg.png') center/cover; display: flex; justify-content: center; height: 110px;} */
+header #header_b { background: url('./img/header_bg.png'); background-position: center center; background-size: cover; display: flex; justify-content: center; height: 110px; padding: 0% 6% 0% 6%; }
+header #header_b #header_content { display: flex; }
+
+header #header_b #header_content #hc_one { width:33.333%; display: flex; align-items: center; justify-content: flex-start; padding:10px;}
+header #header_b #header_content #hc_one img { width:40%; }
+
+header #header_b #header_content #hc_two { width: 49.666%; display: flex; padding:10px}
+header #header_b #header_content #hc_two ul { margin-left:auto; display: flex; align-items: center; }
+header #header_b #header_content #hc_two ul li { margin-right:50px }
+header #header_b #header_content #hc_two ul li a { font-size:25px; color:black; font-weight: 800; text-decoration: none; }
+
+header #header_b #header_content #hc_three { width:10%; display: flex; align-items: center; padding:10px; }
+header #header_b #header_content #hc_three #hc_three_content { background: #C91518; border-radius: 10px; padding:10px; display: flex;}
+header #header_b #header_content #hc_three #hc_three_content a { display: flex; }
+header #header_b #header_content #hc_three #hc_three_content a img { max-width:80%; margin:0 auto}
+
+@keyframes top_banner_up {from{height: 110px;} to {height:80px}}
+@keyframes top_banner_down {from{height: 80px;} to {height:110px}}
+
+
+
+
+
+main #one { height: 2000px; width:1px; border:1px solid red; margin:0 auto; }    
+</style>
+</head>
+<body>
+<header>
+    <div id="header_b">
+        <div id="header_content">
+            <div id="hc_one">
+                <img src="./img/logo_01.png" alt="">
+            </div>
+            <div id="hc_two">
+                <ul>
+                    <li><a href="#">Brand</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Store</a></li>
+                    <li><a href="#">Join</a></li>
+                </ul>
+            </div>
+            <div id="hc_three">
+                <div id="hc_three_content">
+                    <a href="#">
+                        <img src="./img/jawsfood.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section id="one">
+        <div ></div>
+    </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    let header= document.querySelector("header").getBoundingClientRect().top+window.scrollY;
+    console.log("header"+header)
+
+    window.addEventListener('scroll', function(){
+        let scroll_hv = window.scrollY;
+        console.log(scroll_hv)
+
+        if(header < scroll_hv){
+            document.querySelector("header #header_b").style.animation="top_banner_up 1s"
+            setTimeout(function(){
+                document.querySelector("header #header_b").style.height="80px"
+            },950)
+            document.querySelector("header #header_b").style.background="black"
+        }else{
+            document.querySelector("header #header_b").style.animation="top_banner_down 1s"
+            setTimeout(function(){
+                document.querySelector("header #header_b").style.height="110px"
+            },950)
+            document.querySelector("header #header_b").style.background="url('./img/header_bg.png') center/cover"
+        }
+    })
+</script>
+</body>
+</html>

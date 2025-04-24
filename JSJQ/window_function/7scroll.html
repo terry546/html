@@ -16,10 +16,16 @@
     <div class="scrollex"></div>
 </body>
 <script>
+    window.addEventListener('scroll', function(){
+        let value= window.scrollY;
+    })
+</script>
+
+<script>
     window.scroll({
-  top: 500,
-  left: 100,
-  behavior: "smooth",
-});
+        top: 500,
+        left: 100,
+        behavior: "smooth",
+    });
 </script>
 </html>

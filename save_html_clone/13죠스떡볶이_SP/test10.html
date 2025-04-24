@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <title>스크롤 도형 축소</title>
+  <style>
+    body {
+      height: 3000px; /* 스크롤 길이를 위해 */
+      margin: 0;
+      padding: 0;
+    }
+
+    #shape {
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      width: 200px;
+      height: 200px;
+      background-color: coral;
+      transition: width 0.1s, height 0.1s;
+    }
+  </style>
 </head>
 <body>
-    <i class="fa-solid fa-xmark"></i>
+
+<div id="shape"></div>
+
+<script>
+  const shape = document.getElementById('shape');
+  const maxSize = 200;  // 도형 최대 크기
+  const minSize = 50;   // 도형 최소 크기
+  const maxScroll = 1000; // 이 정도 스크롤 이후엔 더 이상 줄어들지 않음
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // 스크롤 비율 계산 (0 ~ 1)
+    const scrollRatio = Math.min(scrollY / maxScroll, 1);
+
+    // 도형 크기 계산
+    const newSize = maxSize - (scrollRatio * (maxSize - minSize));
+    
+    shape.style.width = `${newSize}px`;
+    shape.style.height = `${newSize}px`;
+  });
+</script>
+
 </body>
 </html>
