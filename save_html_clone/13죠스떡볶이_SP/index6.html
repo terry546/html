@@ -63,11 +63,11 @@
         main #two #two_b #two_content #two_right #two_right_img1 { background-image: url(http://jawstopokki.co.kr/wp-content/uploads/2022/08/Asset-19-2.png); background-position: bottom center; background-repeat: no-repeat; background-size: 100% auto; width:100%; min-height: 800px;}
         main #two #two_b #two_content #two_right #tr_in_content_wrap{width:280px;height: 76.66px; position: absolute; margin: 380px -20px 0px 500px;}
         /* main #two #two_b #two_content #two_right #two_right_img2 { width:280px;height: 76.66px; position: absolute; margin: 380px -20px 0px 500px; padding: 0px 0px 0px 0px;} */
-        main #two #two_b #two_content #two_right #two_right_img2 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; }
-        main #two #two_b #two_content #two_right #two_right_img3 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; margin: -15px 0px 0px 0px;}
-        main #two #two_b #two_content #two_right #two_right_img4 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; margin: -15px 0px 0px 0px;}
-        main #two #two_b #two_content #two_right #two_right_img5 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; margin: -15px 0px 0px 0px;}
+        main #two #two_b #two_content #two_right #two_right_img2 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; display: none;}
 
+        main #two #two_b #two_content #two_right #two_right_img3 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; margin: -10px 0px 0px 0px; display: none;}
+        main #two #two_b #two_content #two_right #two_right_img4 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; margin: -10px 0px 0px 0px; display: none;}
+        main #two #two_b #two_content #two_right #two_right_img5 { width:280px;height: 76.66px; padding: 0px 0px 0px 0px; margin: -10px 0px 0px 0px; display: none;}
 
         @keyframes slide {
             0% {
@@ -76,6 +76,30 @@
             }
             100% {  
                 transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes bouncInRight {
+            60%, 75%, 90%, 0%, 100% {
+                animation-timing-function: cubic-bezier(.215,.61,.355,1);
+            }
+            0% {
+                opacity: 0;
+                /* transform: translate3d(3000px, 0, 0); */
+                transform: translate3d(500%, 0, 0);
+            }
+            60% {
+                opacity: 1;
+                transform: translate3d(-25px, 0, 0);
+            }
+            75% {
+                transform: translate3d(10px, 0, 0);
+            }
+            90% {
+                transform: translate3d(-5px, 0, 0);
+            }
+            100% {
+                transform: none;
             }
         }
 
@@ -478,27 +502,54 @@ Powered by JAWSFOOD ALL RIGHTS RESERVED.
         
         // let two_right_img1 = document.getElementById("two_right_img1").getBoundingClientRect().top+window.scrollY;
         let two_right_img1 = document.getElementById("two_right_img1").getBoundingClientRect().top + window.scrollY - (document.getElementById("two_right_img1").getBoundingClientRect().top + window.scrollY) * 1;
-
-        console.log("two_right_img1: "+two_right_img1)
+        // let two_right_img2 = document.getElementById("two_right_img2").getBoundingClientRect().top + (window.innerHeight * 0.00001)
+        let two_right_img2 = document.getElementById("two_right_img2").getBoundingClientRect().top + (window.innerHeight * -0.98)
+        console.log("two_right_img2: "+ two_right_img2)
+        console.log(window.innerHeight)
+        let two_right_img3 = document.getElementById("two_right_img3").getBoundingClientRect().top + (window.innerHeight * -0.98)
+        let two_right_img4 = document.getElementById("two_right_img4").getBoundingClientRect().top + (window.innerHeight * -0.98)
+        let two_right_img5 = document.getElementById("two_right_img5").getBoundingClientRect().top + (window.innerHeight * -0.98)
 
         window.addEventListener('scroll', function(){
             let scroll_hv2 = window.scrollY;
+            console.log(scroll_hv2)
 
             if(two_right_img1 < scroll_hv2){
                 document.getElementById("two_right_img1").style.animation="slide 1.2s ease forwards"
                 document.getElementById("two_right_img1").style.display="block"
             }
+
+            if(two_right_img2 < scroll_hv2){
+                document.getElementById("two_right_img2").style.animation="bouncInRight 1.2s ease forwards"
+                document.getElementById("two_right_img2").style.display="block"
+            }
+            if(two_right_img3 < scroll_hv2){
+                document.getElementById("two_right_img3").style.animation="bouncInRight 1.2s ease forwards"
+                document.getElementById("two_right_img3").style.display="block"
+            }
+            if(two_right_img4 < scroll_hv2){
+                document.getElementById("two_right_img4").style.animation="bouncInRight 1.2s ease forwards"
+                document.getElementById("two_right_img4").style.display="block"
+            }
+            if(two_right_img5 < scroll_hv2){
+                document.getElementById("two_right_img5").style.animation="bouncInRight 1.2s ease forwards"
+                document.getElementById("two_right_img5").style.display="block"
+            }
+            // if(two_right_img3 < scroll_hv2){}
+            // if(two_right_img4 < scroll_hv2){}
+            // if(two_right_img5 < scroll_hv2){}
+
         })
 
     </script>
 
     <script>
         let header= document.querySelector("header").getBoundingClientRect().top+window.scrollY;
-        console.log("header"+header)
+        // console.log("header"+header)
     
         window.addEventListener('scroll', function(){
             let scroll_hv = window.scrollY;
-            console.log(scroll_hv);
+            // console.log(scroll_hv);
     
             let headerContent = document.querySelector("#header_content");
     
@@ -512,7 +563,7 @@ Powered by JAWSFOOD ALL RIGHTS RESERVED.
                     scaleValue = 0.9; // 최소 크기 제한
                 }
                 // 이 코드는 바깥 if문 안에 있음 → 계속 실행됨
-                console.log("스크롤로 인한 스케일 조정:", scaleValue);
+                // console.log("스크롤로 인한 스케일 조정:", scaleValue);
             }
     
             headerContent.style.transform = `scale(${scaleValue})`;
