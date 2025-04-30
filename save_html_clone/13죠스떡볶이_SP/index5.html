@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>죠스떡볶이</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {margin:0; padding:0; list-style: none; box-sizing: border-box;}
+        /* header { background: url("./img/header_bg.png") center/cover; width:100%; height:110px; display: flex; align-items: center; position: fixed; z-index: 3;} */
+        /* 백그라운드 #C91518 주기*/
+        header { position: fixed; width:100%; z-index: 2;}
+        /* header #header_b { background: url('./img/header_bg.png') center/cover; display: flex; justify-content: center; height: 110px;} */
+        header #header_b { background: url('./img/header_bg.png'); background-position: center center; background-size: cover; display: flex; justify-content: center; height: 110px; padding: 0% 6% 0% 6%; }
+        /* header #header_b #header_content { display: flex; } */
+        header #header_b #header_content { display: flex; transition: transform 0.3s ease; /* 부드러운 스케일 애니메이션 */ transform-origin: center center; /* 스케일 기준점 */}
+
+        header #header_b #header_content #hc_one { width:33.333%; display: flex; align-items: center; justify-content: flex-start; padding:10px;}
+        header #header_b #header_content #hc_one img { width:40%; }
+
+        header #header_b #header_content #hc_two { width: 49.666%; display: flex; padding:10px}
+        header #header_b #header_content #hc_two ul { margin-left:auto; display: flex; align-items: center; }
+        header #header_b #header_content #hc_two ul li { margin-right:50px }
+        header #header_b #header_content #hc_two ul li a { font-size:25px; color:black; font-weight: 800; text-decoration: none; }
+
+        header #header_b #header_content #hc_three { width:10%; display: flex; align-items: center; padding:10px; }
+        header #header_b #header_content #hc_three #hc_three_content { background: #C91518; border-radius: 10px; padding:10px; display: flex;}
+        header #header_b #header_content #hc_three #hc_three_content a { display: flex; }
+        header #header_b #header_content #hc_three #hc_three_content a img { max-width:80%; margin:0 auto}
+        /* @keyframes top_banner_up {from{transform:translateY(100%) to {transform:translateY(80%)}}} */
+        @keyframes top_banner_up {from{height: 110px;} to {height:80px}}
+        @keyframes top_banner_down {from{height: 80px;} to {height:110px}}
+
+        main { display: flex; flex-direction: column; background: #C91518; }
+        main #one { width:100%; margin-top:110px; }
+        main #one #one_b { width:100%; }
+        main #one #img_text { position: absolute; width:33%; margin-top:3%; z-index: 1; left:33% }
+        main #one #logo_text {position: absolute; width:100%; margin-top:9.5%; z-index: 1; left:0; font-size: 150%; color: #ffffff; font-weight: 400; text-align: center;line-height: 1.5}
+
+        /* main #two { width:100%; height: 90vh; display: flex;} */
+        /* main #two #two_b { background-image: url("./img/back.jpg"); background-attachment: local; width:100%; height: 100%; background-position: bottom left;} */
+        /* main #two { width:1903px; height: 800px; display: flex; } */
+        main #two { display: flex;}
+
+        /* main #two #two_b { width:100%; padding-bottom: 43%; background-image: url(./img/back.jpg); background-position: bottom left; background-repeat: no-repeat;} */
+        /* padding-bottom을 없애고 안에 내용물을 채워서 높이를 맞추면 되나? */
+
+        main #two #two_b { width:100%; background-image: url(./img/back.jpg); background-position: bottom left; background-repeat: no-repeat; display: flex; justify-content: center;}
+        /* main #two #two_b #two_content {border:1px solid white; width: 1200px; height: 500px; margin: 10% 0; display: flex; ;} */
+        main #two #two_b #two_content {border:1px solid white; width: 1200px; height: 100%; display: flex;}
+        main #two #two_b #two_content #two_left {width:35%; display: flex; flex-direction: column; margin: 16% 0% 10% 0%; }
+        main #two #two_b #two_content #two_left #two_left_img1 {width:15vw; margin-bottom: 10px;}
+        main #two #two_b #two_content #two_left #two_left_img2 {width:15vw;}
+        main #two #two_b #two_content #two_left #two_left_text {text-align: left; color:#ffffff; font-size: 22px; font-weight: 400; line-height: 1.5em; font-family: "PretendardVariable", Sans-serif;}
+        main #two #two_b #two_content #two_left #two_left_imgbox { margin-top:80px; display: flex;}
+        /* main #two #two_b #two_content #two_left #two_left_imgbox div { } */
+        main #two #two_b #two_content #two_left #two_left_imgbox div .in_img {max-width: 80%;}
+
+        main #two #two_b #two_content #two_right {border: 1px solid yellow; width:65%; display: flex; justify-content: center;}
+        /* main #two #two_b #two_content #two_right #two_right_img1 { background-image: url(./img/Asset-19-2.png); max-width: 620px; height: 100%; position: absolute;} */
+        /* main #two #two_b #two_content #two_right #two_right_img1 { position: absolute; max-width: 50%; bottom: -10%;} */
+        /* main #two #two_b #two_content #two_right #two_right_img1 { width:100%; display: none;  } */
+        main #two #two_b #two_content #two_right #two_right_img1 { background-image: url(http://jawstopokki.co.kr/wp-content/uploads/2022/08/Asset-19-2.png); background-position: bottom center; background-repeat: no-repeat; background-size: 100% auto; width:100%; min-height: 800px;}
+        main #two #two_b #two_content #two_right #two_right_img2 { width:280px;height: 76.66px; position: absolute; margin: 380px -20px 0px 500px; padding: 0px 0px 0px 0px;}
+        main #two #two_b #two_content #two_right #two_right_img3 { width:280px;height: 76.66px; position: absolute; padding: 0px 0px 0px 0px;}
+
+
+        @keyframes slide {
+            0% {
+                transform: translate3d(0, 100%, 0);
+                visibility: visible;
+            }
+            100% {  
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* main #three {border:1px solid green; width:100%; height: 90vh;} */
+        /* main #three {border:1px solid green;} */
+        main #three { z-index: 1; }
+        /* main #three #three_b {width:100%; background-image: url(./img/three_back.jpg); background-repeat: no-repeat; max-height: 800px; min-height: 800px; border:1px solid green; display: flex; justify-content: space-around; flex-direction:row} */
+        main #three #three_b {width:100%; background-image: url(./img/three_back.jpg); background-repeat: no-repeat; max-height: 800px; min-height: 800px; border:1px solid green; display: flex; justify-content: space-around; flex-direction:row}
+        main #three #three_b #three_content { border:1px solid red; display: flex; max-width: 1300px; min-height: 800px;}
+        main #three #three_b #three_content #three_left {border: 1px solid orange; display: flex;justify-content: center; align-items: flex-end; width:60%;}
+        /* main #three #three_b #three_content #three_left {background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat; background-size: 150% auto; width:80%;} */
+
+        main #three #three_b #three_content #three_left #three_left_img1 { max-width: 90%;}
+        /* main #three #three_b #three_content #three_left #three_left_img1 { background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat; background-size: 90% auto; } */
+        /* main #three #three_b #three_content #three_left #three_left_img1 { background-image: url(./img/Asset-18.png); background-position: bottom center; background-repeat: no-repeat;  width:50%; height: 50%; } */
+
+        main #three #three_b #three_content #three_right {display: flex; flex-direction: column; justify-content: center; margin: 0 0 0 0; padding: 0 0 0 0;}
+        main #three #three_b #three_content #three_right #tr_content1 { width: 15vw; margin-bottom: 10px;}
+        main #three #three_b #three_content #three_right #tr_content2 { width: 19vw;}
+        main #three #three_b #three_content #three_right #tr_content3 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5em; margin-right: -15vw;}
+        main #three #three_b #three_content #three_right #tr_content4 { width: 11vw; margin-top: 100px;}
+
+
+        
+        main #four{ width:100% }
+        main #four #four_b { width:100%; background-image: url(./img/bg.jpg); background-repeat: no-repeat;background-position: bottom left; display: flex; justify-content: center;}
+        /* main #four #four_b #four_content { width:80%; height: 1010px; display: flex; justify-content: center; align-items: center; }  */
+        main #four #four_b #four_content {  max-width: 1300px; min-height: 110vh; display: flex; justify-content: center; align-items: center; } 
+        /*  ㄴ 내가 보고 만들어 보고 나중에 적용 시키기 */
+        /* main #four #four_b #four_content #four_left { display: flex; flex-direction: column; justify-content: center; max-width: 1300px; min-height: 110vh; width:43% } */
+        main #four #four_b #four_content #four_left { display: flex; flex-direction: column; justify-content: center;  width:43% }
+        main #four #four_b #four_content #four_left #fl_content1 { text-align: left;color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 700; line-height: 1.5em; margin-bottom: 12px;}
+        main #four #four_b #four_content #four_left #fl_content2 { width:16vw; margin-bottom: 10px;}
+        main #four #four_b #four_content #four_left #fl_content3 { text-align: left; color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5em; margin-bottom: 80px}
+        main #four #four_b #four_content #four_left #fl_content4 { width:10vw }
+
+        main #four #four_b #four_content #four_right { display: flex; justify-content: center; align-items: center; max-width: 800px; }
+        main #four #four_b #four_content #four_right #tr_content1 { width:98% }
+        /* main #four #four_b #four_content #four_right #tr_content1 { width:86vw;  } */
+
+        main #five { width:100%}
+        main #five #five_b { background-image: url(img/bg-1.jpg); background-position: bottom left; display: flex; justify-content: center;}
+        main #five #five_content {max-width: 1300px; min-height: 115vh; display: flex; flex-direction: column; justify-content: center; border:1px solid red; }
+
+        main #five #five_content #five_one { display: flex; justify-content: space-between; margin-bottom: 50px; }
+
+        /* main #five #five_content #five_one_left { display: flex; flex-direction: column; margin-right:50% } */
+        main #five #five_content #five_one_left { display: flex; flex-direction: column; margin-left:0%; }
+        main #five #five_content #five_one_left #fo_content1 { width:13vw; margin-bottom: 10px; }
+        main #five #five_content #five_one_left #fo_content2 { width:15vw; margin-bottom: 10px;}
+        main #five #five_content #five_one_left #fo_content3 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5em; width:150%;}
+
+        main #five #five_content #five_one_right { display: flex; justify-content: flex-end; margin-left:0% }
+        main #five #five_content #five_one_right img { max-width: 80%;  }
+
+        main #five #five_content #five_two #ft_content1 {  }
+        main #five #five_content #five_two #ft_content2 { position: absolute; z-index: -1; }
+
+        main #six {}
+        main #six #six_b { background-color: #FAF1DD; display: flex; justify-content:center }
+        /* main #six #six_b #six_content { max-width: 1300px; min-height: 110vh; display: flex; display: flex; flex-direction: column; padding: 10% 0} */
+        main #six #six_b #six_content { max-width: 1300px; min-height: 110vh; display: flex; flex-direction: column; padding: 10% 0}
+        main #six #six_b #six_content #six_one #xo_content1 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 700; line-height: 1.5em; }
+        main #six #six_b #six_content #six_one #xo_content2 { width:12vw }
+        main #six #six_b #six_content #six_one #xo_content3 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 22px; font-weight: 700; line-height: 1.5em; }
+
+        /* main #six #six_b #six_content #six_two { display: flex; flex-direction: row; flex-wrap: wrap; width:100%; } */
+        main #six #six_b #six_content #six_two {  }
+        
+        main #six #six_b #six_content #six_two #st_content1 { display: flex; max-width: 1252px;}
+        main #six #six_b #six_content #six_two #st_content1 img {display: block; width:50%}
+
+        main #six #six_b #six_content #six_two #st_content2 { display: flex; max-width: 1252px;}
+        main #six #six_b #six_content #six_two #st_content2 img {display: block; width:33.33%}
+
+        main #six #six_b #six_content #six_two #st_content3 { display: flex; max-width: 1252px;}
+        main #six #six_b #six_content #six_two #st_content3 img {display: block; width:50%}
+
+        main #six #six_b #six_content #six_two #st_content4 { display: flex; max-width: 1252px;}
+        main #six #six_b #six_content #six_two #st_content4 img {display: block; width:33.33%}
+        
+        main #seven {}
+        
+        main #seven #seven_b { background-image: url(./img/Asset-10-80.jpg); background-size: fill; width:100%;background-position: center left; background-repeat: no-repeat;  }
+
+        main #seven #seven_b #seven_content { max-width: 1250px; min-height: 90vh; display: flex; justify-content: center; margin: 0 auto; align-items: center;}
+        
+        main #seven #seven_b #seven_content #seven_one {display: flex; flex-direction: column; margin-bottom: 110px;}
+        main #seven #seven_b #seven_content #seven_one #so_content1 {width:10vw}
+        main #seven #seven_b #seven_content #seven_one #so_content2 {max-width: 80%;}
+        main #seven #seven_b #seven_content #seven_one #so_content3 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 25px; font-weight: 400; line-height: 1.5em; }
+
+        /* main #seven #seven_b #seven_content #seven_two {} */
+        main #seven #seven_b #seven_content #seven_two {width:65%; z-index: 1; height: 100%;}
+        main #seven #seven_b #seven_content #seven_two img {position: relative; right:-35%; top: -15vh; }
+        
+        main #seven #seven_b #seven_content #seven_b2 {background: url(./img/food_img.png); background-position: bottom right; background-repeat: no-repeat; background-size: contain; height: 90%; width:100%; position: absolute;}
+        
+        main #eight { }
+        /* main #eight #seven_b { background-color: #D71920; background-image: url(./img/Asset-22-81.jpg); background-size:contain; background-position: bottom left; background-repeat: no-repeat; display: flex; justify-content: center; ;} */
+        /* main #eight #seven_b { background-image: url(./img/Asset-22-81.jpg); background-size:contain; background-position: center; background-repeat: no-repeat; display: flex; justify-content: center; } */
+        /* main #eight #seven_b { background-color: #D71920; background-image: url(./img/Asset-22-81.jpg); background-size:contain; background-position: center; background-repeat: no-repeat; display: flex; justify-content: center; } */
+        main #eight #seven_b { background-color: #D71920; background-image: url(./img/Asset-22-81.jpg); background-size:contain; background-position: center; background-repeat: no-repeat;  }
+        main #eight #seven_b #seven_content { max-width: 1252px;min-height: 90vh; display: flex; margin: 0 auto}
+        main #eight #seven_b #seven_content #seven_one { width:60%; }
+        /* main #eight #seven_b #seven_content #seven_two { width:40%; display: flex; flex-direction: column; justify-content: center; padding: 0 0 0 10%; margin: 0px 0px 150px 0px;} */
+        /* main #eight #seven_b #seven_content #seven_two { width:40%; display: flex; flex-direction: column; justify-content: center; padding: 0 0 0 20%; margin: 0px 0px 150px 0px; position: relative;} */
+        main #eight #seven_b #seven_content #seven_two { width:40%; display: flex; flex-direction: column; justify-content: center; padding: 0 0 0 3%; margin: 0px 0px 150px 0px; position: relative;}
+        main #eight #seven_b #seven_content #seven_two #st_content1 { width:10vw; margin-bottom: 10px; }
+        main #eight #seven_b #seven_content #seven_two #st_content2 { max-width: 80%; margin-bottom:10px}
+        /* main #eight #seven_b #seven_content #seven_two #st_content3 { text-align: left; color: #FFFFFF;font-family: "PretendardVariable", Sans-serif; font-size: 25px; font-weight: 400; line-height: 1.5em; white-space: nowrap;} */
+        main #eight #seven_b #seven_content #seven_two #st_content3 { text-align: left; color: #FFFFFF;font-family: "PretendardVariable", Sans-serif; font-size: 25px; font-weight: 400; line-height: 1.5em; word-break: keep-all;}
+
+        main #nine {}
+        main #nine #nine_b { background-image:url(./img/food.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover; }
+        
+        main #nine #nine_b #nine_content { max-width: 1252px; min-height: 180vh; display: flex; margin: 0 auto;}
+        
+        main #nine #nine_b #nine_content #nine_one { display: flex; flex-direction: column; margin: 189px 0 0 0}
+        main #nine #nine_b #nine_content #nine_one #no_content1 { width:10vw; margin-bottom: 10px; }
+        main #nine #nine_b #nine_content #nine_one #no_content2 { max-width:93%; }
+
+        main #nine #nine_b #nine_content #nine_two {  }
+        main #nine #nine_b #nine_content #nine_two #nt_content1 { text-align: left; color: #1A1A1A; font-family: "PretendardVariable", Sans-serif; font-size: 25px; font-weight: 600; line-height: 1.5em; margin-top:315px; margin-left:100px;}
+
+        /* main #bottom_banner { position: fixed; bottom:0; width:100%; } */
+        main #bottom_banner { position: fixed; bottom:0; width:100%; display: none;z-index: 2;}
+
+        main #bottom_banner #cross_icon{position: absolute; right:20px; top:20px;}
+
+        main #bottom_banner #bb_b { background-color: #FFC600; }
+        main #bottom_banner #bb_b #bb_content { display: flex; justify-content: center; align-items: center; max-width: 1200px; min-height: 160px; margin: 0 auto;}
+
+        main #bottom_banner #bb_b #bb_content #bb_content1 { width:20%; margin-right: 5%;}
+        main #bottom_banner #bb_b #bb_content #bb_content1 p:nth-child(1) { color: #C91518; font-family: "Noto Sans KR", Sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -1px; line-height: 1;}
+        main #bottom_banner #bb_b #bb_content #bb_content1 p:nth-child(2) { color: #1A1A1A; font-family: "Noto Sans KR", Sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1;}
+
+        main #bottom_banner #bb_b #bb_content #bb_content2 {display: flex; width:100%}
+        main #bottom_banner #bb_b #bb_content #bb_content2 textarea:nth-child(1) { width: 30%; height: 43px; margin-right: 2%;}
+        main #bottom_banner #bb_b #bb_content #bb_content2 textarea:nth-child(2) { width: 35%; height: 43px; margin-right: 2%;}
+        main #bottom_banner #bb_b #bb_content #bb_content2 select { width: 15%; height: 43px; margin-right: 2%;}
+        main #bottom_banner #bb_b #bb_content #bb_content2 button { width: 25%;}
+
+        /* main #bottom_banner #bb_b #bb_content #bb_content2 #bb_content2_2 {position: absolute; top:120px;  width:70%; text-align: center;} */
+
+        @keyframes bottom_slide_up { 
+            from {transform: translateY(100%);} to {transform: translateY(0);}
+        }
+        @keyframes bottom_slide_down { 
+            from {transform: translateY(0%);} to {transform: translateY(100%);}
+        }
+
+        footer { }
+        footer #f_one_b { background-color: #C91518; }
+        /* footer #f_one_content { margin: 20px auto; max-width: 1400px; min-height: 290px;} */
+        footer #f_one_content { margin-left: auto; margin-right: auto; padding-top: 70px; max-width: 1400px; min-height: 290px;}
+        footer #f_one_content #fo_content1 { text-align: left; color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 20px; margin-bottom: 20px;}
+        footer #f_one_content #fo_content2 { text-align: left; font-family: "PretendardVariable", Sans-serif; font-size: 14px;  margin-bottom: 20px;}
+        footer #f_one_content #fo_content2 a { box-shadow: none; text-decoration: none; color: #F9BE00; }
+        footer #f_one_content #fo_content3 { text-align: left; color: #FFFFFF; font-family: "PretendardVariable", Sans-serif; font-size: 14px;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header_b">
+            <div id="header_content">
+                <div id="hc_one">
+                    <img src="./img/logo_01.png" alt="">
+                </div>
+                <div id="hc_two">
+                    <ul>
+                        <li><a href="#">Brand</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Store</a></li>
+                        <li><a href="#">Join</a></li>
+                    </ul>
+                </div>
+                <div id="hc_three">
+                    <div id="hc_three_content">
+                        <a href="#">
+                            <img src="./img/jawsfood.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="one">
+            <img id="img_text" src="./img/Asset-1-2.png">
+            <div id="logo_text">Since 2007, 15년 노하우의 분식 프랜차이즈<br>
+                죠스떡볶이가 업그레이드 하여 새롭게 돌아왔습니다.</div>
+            <img id="one_b" src="./img/one_back2.jpg" alt="">
+        </section>
+        <section id="two">
+            <div id="two_b">
+                <div id="two_content">
+                    <div id="two_left">
+                        <img id="two_left_img1" src="img/Asset-3.png" alt="#">
+                        <img id="two_left_img2" src="img/Asset-2.png" alt="#">
+                        <div id="two_left_text">간편한 조리로 배달 운영 최적화 낮은 원가율과 최소 인원 운영으로 수익보장!</div>
+                        <div id="two_left_imgbox">
+                            <div>
+                                <img id="two_left_img3" class="in_img" src="img/Asset-5.png" alt="#">
+                            </div>
+                            <div>
+                                <img id="two_left_img4" class="in_img" src="img/Asset-6.png" alt="#">
+                            </div>
+                            <div>
+                                <img id="two_left_img5" class="in_img" src="img/Asset-7.png" alt="#">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="two_right">
+                        <!-- <img id="two_right_img1" src="./img/Asset-19-2.png" alt="#"> -->
+                         <div id="two_right_img1"></div>
+                         <img id="two_right_img2" src="./img/Asset-12-2.png" alt="">
+                         <img id="two_right_img3" src="./img/Asset-16-3.png"   alt="">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="three">
+            <div id="three_b">
+                <div id=three_content>
+                    <div id="three_left">
+                        <img id="three_left_img1" src="./img/Asset-18.png" alt="">
+                         <!-- <div id="three_left_img1"></div> -->
+                    </div>
+                    <div id="three_right">
+                        <img id="tr_content1" src="./img/Asset-16.png" alt="">
+                        <img id="tr_content2" src="./img/Asset-15.png" alt="">
+                        <div id="tr_content3">죠스 Topokki 논현본점 매장 오픈 후,<br>3개월만에 분식 카테고리 맛집랭킹 1위!</div>
+                        <img id="tr_content4" src="./img/hot_and_sweet.png" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section id="four">
+            <div id="four_b">
+                <div id="four_content">
+                    <div id="four_left">
+                        <div id="fl_content1">죠스 Topokki 리얼리뷰</div>
+                        <img id="fl_content2" src="./img/Asset-10-1.png" alt="">
+                        <div id="fl_content3">논현본점 기준 월 300개의 고객리뷰</div>
+                        <img id="fl_content4" src="./img/real_review.png" alt="">
+                    </div>
+                    <div id="four_right">
+                        <img id="tr_content1" src="./img/Asset-23.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="five">
+            <div id="five_b">
+                <div id="five_content">
+                    <div id="five_one">
+                        <div id="five_one_left">
+                            <img id="fo_content1" src="./img/Asset-26.png" alt="">
+                            <img id="fo_content2" src="./img/Asset-27.png" alt="">
+                            <div id="fo_content3">10평대 소규모 배달형 매장에서도<br>
+                                안정적인 매출을 약속합니다</div>
+                        </div>
+                        <div id="five_one_right">
+                            <img src="./img/20230824_145510400.jpg" alt="">
+                        </div>
+                    </div>
+                    <div id="five_two">
+                        <div id="ft_content1">
+                            <img id="ft_content2" src="./img/Asset-10-80-1.jpg" alt="">
+                            <img id="ft_content3" src="./img/bg2.jpg" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="six">
+            <div id="six_b">
+                <div id="six_content">
+                    <div id="six_one">
+                        <div id="xo_content1">죠스 Topokki만의</div>
+                        <img id="xo_content2" src="./img/Asset-12-1.png" alt="">
+                        <div id="xo_content3">고객의 인지성을 향상시키는 배색의 외부 파사드와<br>
+                            마음이 편안해지는 깔끔한 내부 인테리어!</div>
+                    </div>
+                    <div id="six_two">
+                        <div id="st_content1">
+                            <img src="./img/Interior1.jpg"  alt="">
+                            <img src="./img/Interior2.jpg"  alt="">
+                        </div>
+                        <div id="st_content2">
+                            <img src="./img/Interior3.jpg"  alt="">
+                            <img src="./img/Asset-17-83.jpg"  alt="">
+                            <img src="./img/Interior4.jpg"  alt="">
+                        </div>
+                        <div id="st_content3">
+                            <img src="./img/Interior5.jpg"  alt="">
+                            <img src="./img/Interior6.jpg"  alt="">
+                        </div>
+                        <div id="st_content4">
+                            <img src="./img/Interior7.jpg"  alt="">
+                            <img src="./img/Interior8.jpg"  alt="">
+                            <img src="./img/Interior9.jpg"  alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="seven">
+            <div id="seven_b">
+                <div id="seven_content">
+                    <div id="seven_one">
+                        <img id="so_content1" src="./img/more.png" alt="">
+                        <img id="so_content2" src="./img/Asset-3-2.png" alt="">
+                        <div id="so_content3">HOT한 메뉴들이 더 맛있게 돌아왔다.<br>
+                            매운맛도 3단계로 조절가능!
+                        </div>
+                    </div>
+                    <div id="seven_two">
+                        <img src="./img/hot_and_sweet-1.png" alt="">
+                    </div>
+                    <div id="seven_b2"></div>
+                </div>
+            </div>
+        </section>
+        <section id="eight">
+            <div id="seven_b">
+                <div id="seven_content">
+                    <div id="seven_one"></div>
+                    <div id="seven_two">
+                        <img id="st_content1" src="./img/Asset-15-1.png" alt="">
+                        <img id="st_content2" src="./img/logo_02-768x209.png" alt="">
+                        <div id="st_content3" > 배달&포장 최적화한된 초보자도 쉽고 빠르게<br>조리할 수 있는 탄탄한 조리 메뉴얼!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="nine">
+            <div id="nine_b">
+                <div id="nine_content">
+                    <div id="nine_one">
+                        <img id="no_content1" src="./img/more.png" alt="">
+                        <img id="no_content2" src="./img/Asset-16-1 (1).png" alt="">
+                    </div>
+                    <div id="nine_two">
+                        <div id=nt_content1>
+                            맛있게 매운 다양한 메뉴들이 가득한<br>
+                            종합분식 프랜차이즈!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bottom_banner">
+            <i id="cross_icon" class="fa-solid fa-xmark"></i>
+            <div id="bb_b">
+                <div id="bb_content">
+                    <div id="bb_content1">
+                        <p>창업문의</p>
+                        <p>1688-2868</p>
+                    </div>
+                    <div id="bb_content2">
+                        <textarea name="" id=""></textarea>
+                        <textarea name="" id=""></textarea>
+                        <select name="" id="">
+
+                        </select>
+                        <button>신청하기</button>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="f_one">
+            <div id="f_one_b">
+                <div id="f_one_content">
+                    <div id="fo_content1">
+                        주소 : 서울 강남구 언주로 147길 20 죠스푸드<br>
+                        사업자번호 : 601-87-02267 대표자 : 나상균
+                    </div>
+                    <div id="fo_content2"><a href="">개인정보처리방침</a></div>
+                    <div id="fo_content3">
+                        © 2007 JAWSFOOD Co.,Ltd<br>
+Powered by JAWSFOOD ALL RIGHTS RESERVED.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        
+        // let two_right_img1 = document.getElementById("two_right_img1").getBoundingClientRect().top+window.scrollY;
+        let two_right_img1 = document.getElementById("two_right_img1").getBoundingClientRect().top + window.scrollY - (document.getElementById("two_right_img1").getBoundingClientRect().top + window.scrollY) * 1;
+
+        console.log("two_right_img1: "+two_right_img1)
+
+        window.addEventListener('scroll', function(){
+            let scroll_hv2 = window.scrollY;
+
+            if(two_right_img1 < scroll_hv2){
+                document.getElementById("two_right_img1").style.animation="slide 1.2s ease forwards"
+                document.getElementById("two_right_img1").style.display="block"
+            }
+        })
+
+    </script>
+
+    <script>
+        let header= document.querySelector("header").getBoundingClientRect().top+window.scrollY;
+        console.log("header"+header)
+    
+        window.addEventListener('scroll', function(){
+            let scroll_hv = window.scrollY;
+            console.log(scroll_hv);
+    
+            let headerContent = document.querySelector("#header_content");
+    
+            // 최대 크기: 1, 최소 크기: 0.9
+            let scaleValue = 1;
+    
+            if (scroll_hv > header) {
+                scaleValue = 1 - ((scroll_hv - header) * 0.00015); // 감소율 조정 가능
+    
+                if (scaleValue < 0.9) {
+                    scaleValue = 0.9; // 최소 크기 제한
+                }
+                // 이 코드는 바깥 if문 안에 있음 → 계속 실행됨
+                console.log("스크롤로 인한 스케일 조정:", scaleValue);
+            }
+    
+            headerContent.style.transform = `scale(${scaleValue})`;
+    
+            if(header < scroll_hv){
+                document.querySelector("header #header_b").style.animation="top_banner_up 1s"
+                setTimeout(function(){
+                    document.querySelector("header #header_b").style.height="80px"
+                },950)
+                document.querySelector("header #header_b").style.background="black"
+            }else{
+                document.querySelector("header #header_b").style.animation="top_banner_down 1s"
+                setTimeout(function(){
+                    document.querySelector("header #header_b").style.height="110px"
+                },950)
+                document.querySelector("header #header_b").style.background="url('./img/header_bg.png') center/cover"
+            }
+        })
+    </script>
+    <script>
+        let hei = $("#six").offset().top;
+        let up_banner = hei - ($(window).height()*0.1)
+        // console.log(hei)
+        // console.log(up_banner)
+        let play= false // 한번 실행되면 실행 안되게 불리언 값 주기
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            // console.log(value);
+            // console.log(play);
+            
+
+            if(value > up_banner && !play){
+                let bottom_banner = document.getElementById("bottom_banner");
+                bottom_banner.style.display= "block"
+                bottom_banner.style.animation = "bottom_slide_up 1s";
+                play=true;
+            }
+        })
+        
+        // 크로스 버튼을 누르면 바텀 배너가 내려가기 하기
+        document.getElementById("cross_icon").onclick= function(){
+            // 내려가는 애니메이션 만들어 주기
+            document.getElementById("bottom_banner").style.animation="bottom_slide_down 1s";
+            setTimeout(function(){
+                document.getElementById("bottom_banner").style.display="none" 
+            },900)
+        }
+    </script>
+    <script>
+        
+    </script>
+</body>
+</html>

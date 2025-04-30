@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="parents">
+        <div id="child3"></div>
         <div id="child"></div>
         <div id="child2"></div>
     </div>
@@ -27,7 +28,8 @@
 
 
         // let hei= $("#child2").offset().top;
-        let hei = document.getElementById("child2").getBoundingClientRect().top + window.scrollY;
+        
+        let hei = document.getElementById("child3").getBoundingClientRect().top + window.scrollY;
         let up_banner = hei - ($(window).height()*1.5);
         console.log("as"+hei)
         console.log($(window).height()*1.5, hei)

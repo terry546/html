@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin:0; padding:0; list-style: none; box-sizing: border-box;}
+        body {height: 2000px;}
+        header {border: 1px solid red; width:100%; position: fixed; max-height: 110px;}
+        header #header_b { height: 80px; border: 1px solid orange; margin:10px; }
+        /* header #header_b #header_content {height: 60px; border: 1px solid green; margin:10px; display: flex; gap:100px; justify-content: center; align-items: center;}  */
+        header #header_b #header_content {height: 60px; border: 1px solid green; margin:10px; display: flex; gap:100px; justify-content: center; align-items: center;transition: transform 0.3s ease;} 
+
+        header #header_b #header_content #h_content { }
+        header #header_b #header_content #h_content2 ul { display: flex; }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <div id="header_b">
+                <div id="header_content">
+                    <div id="h_content">
+                        로고
+                    </div>
+                    <div id="h_content2">
+                        <ul>
+                            <li>상품</li>
+                            <li>메뉴</li>
+                            <li>스토어</li>
+                            <li>회원가입</li>
+                        </ul>
+                    </div>
+                    <div id="h_content3">
+                        로고
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            let header = document.querySelector("header").getBoundingClientRect().top+window.scrollY;
+            // console.log(header)
+
+            let headerContent = document.querySelector("#header_content");
+
+            let scaleValue = 1;
+
+            window.addEventListener('scroll', function(){
+                let scroll_hv = window.scrollY;
+                console.log(scroll_hv);
+
+                if (scroll_hv > header) {
+                scaleValue = 1 - ((scroll_hv - header) * 0.00015); // 감소율 조정 가능
+
+                if (scaleValue < 0.9) {
+                    scaleValue = 0.9; // 최소 크기 제한
+                }
+                    // 이 코드는 바깥 if문 안에 있음 → 계속 실행됨
+                    console.log("스크롤로 인한 스케일 조정:", scaleValue);
+                }
+                    headerContent.style.transform = `scale(${scaleValue})`;
+
+            })
+
+        </script>
+    </body>
+    </html>
+</body>
+</html>
