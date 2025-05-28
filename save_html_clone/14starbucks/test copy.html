@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ padding:0; margin:0; list-style: none; box-sizing: border-box; text-decoration: none;}
+        .so {display: none;}
+        #hc_two {  }
+        #hc_two .main_menu { display: flex; margin-right: 20px;}
+        #hc_two .main_menu li { margin:0 20px; }
+        #hc_two .main_menu li:hover .sub_menu_b { display: block; }
+        #hc_two .main_menu li a { color: #333; display: block; font: normal 13px Avenir, Arial, georgia; text-align: center; width: 100%; line-height: 20px;margin-top: 10px;}
+        
+        #hc_two .main_menu li .sub_menu_b { display: none; position: absolute; background: #2C2A29;width:100%; left:0%; margin-top:10px; top:110px; border:1px solid red; }
+        #hc_two .main_menu li .sub_menu_b .sub_menu_content { border:1px solid orange; }
+        
+        /* #hc_two .main_menu li .sub_menu_b .sub_menu_content .sub_menu {  } */
+        /* #hc_two .main_menu li .sub_menu_b .sub_menu_content .sub_menu { display: inline-block; margin:0 auto; border:1px solid yellow; } */
+        #hc_two .main_menu li .sub_menu_b .sub_menu_content .sub_menu {     text-align: center;}
+        #hc_two .main_menu li .sub_menu_b .sub_menu_content .sub_menu ul {     display: inline-block;
+    width: 220px;
+    text-align: left;
+    vertical-align: top; }
+        #hc_two .main_menu li .sub_menu_b .sub_menu_content .sub_menu ul .drop_menu_title {font-size: 100%; color: #666; background: transparent; cursor: pointer;}
+        #hc_two .main_menu li .sub_menu_b .sub_menu_content .sub_menu ul li { }
+        
+    </style>
+</head>
+<body>
+    <div id="hc_two">
+        <nav>
+            <h2 class="so">메인메뉴</h2>
+            <ul class="main_menu">
+                <li>
+                    <a href="#">COFFEE</a>
+                    <div class="sub_menu_b">
+                        <div class="sub_menu_content">
+                            <div class="sub_menu">
+                                <ul>
+                                    <li class="drop_menu_title">커피</li>
+                                    <li>스타벅스 원두</li>
+                                    <li>스타벅스 비아</li>
+                                    <li>스타벅스 오리가미</li>
+                                    <li>스타벅스앳홈 by 캡슐</li>
+                                    <li>나와 어울리는 커피</li>
+                                </ul>
+                                <ul>
+                                    <li class="drop_menu_title">커피 이야기</li>
+                                    <li>농장에서 우리의 손으로</li>
+                                    <li>최상의 아라비카 원두</li>
+                                    <li>스타벅스 로스트 스펙트럼</li>
+                                    <li>스타벅스 디카페인</li>
+                                </ul>
+                                <ul>
+                                    <li class="drop_menu_title">스타벅스 리저브</li>
+                                    <li>RESERVE MAGAZINE</li>
+                                </ul>
+                                <ul>
+                                    <li class="drop_menu_title">에스프레소 음료</li>
+                                    <li>도피오</li>
+                                    <li>에스프레소 마키아또</li>
+                                    <li>아메리카노</li>
+                                    <li>마키아또</li>
+                                    <li>카푸치노</li>
+                                    <li>라떼</li>
+                                    <li>모카</li>
+                                </ul>
+                                <ul>
+                                    <li class="drop_menu_title">최상의 커피를 즐기는 법</li>
+                                    <li>커피 프레스</li>
+                                    <li>푸어 오버</li>
+                                    <li>아이스 푸어 오버</li>
+                                    <li>커피 메이커</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

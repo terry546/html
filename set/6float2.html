@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- float 속성을 사용하고 있습니다. 
+  Float된 요소들은 일반적인 문서 흐름에서 벗어나기 때문에, 
+  부모 요소가 자식 요소의 높이를 자동으로 인식하지 못하게 됩니다. 
+  이를 "float collapse" 현상이라고 합니다. -->
+  <style>
+    #parent{ border: 1px solid gold;  width: 500px; }
+
+    #child{ border: 1px solid red;  width: 500px; }
+    #child::after { content: ""; display: block; clear: both;}
+    /* ::after에  display: block; clear: both;를 추가해서 요소의 높이를 인식하게 해준다 */
+
+    #child2{ border: 1px solid red;  width: 500px; }
+
+    #child3{ border: 1px solid red;  width: 500px; float: left;}
+    /* float가 있으면 부모가 자식에 높이를 인식하지 못한다 */
+
+    /* #child3{ border: 1px solid red;  width: 500px; } */
+
+  </style>
+  <body>
+    <div id="parent">
+      <div id="child">
+        <div id="child2">
+          <!-- <ul>
+            <li></li>
+            <li></li>
+          </ul> -->
+          <div id="child3">
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
