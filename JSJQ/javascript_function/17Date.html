@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+</head>
+
+<body>
+    <div class="container">
+        <p>오늘의 날짜</p>
+        <!-- 날짜가 출력될 태그 -->
+        <h1 id="date-display"></h1>
+    </div>
+    <div>
+        <p>오늘의 날짜</p>
+        <h1 id="date-display2"></h1>
+    </div>
+
+
+</body>
+<script>
+    let now = new Date()
+
+    // 1. now 변수를 사용해서 년, 월, 일 각각 가져오기
+    let year = now.getFullYear()   // 년도 (4자리)
+    let month = now.getMonth() + 1 // 월 (0~11로 반환되므로 1을 더해줍니다)
+    let date = now.getDate()       // 일 (1~31)
+
+    // 2. HTML 문서의 요소에 텍스트 형태로 출력하기
+    document.getElementById("date-display").textContent = `${year}년 ${month}월 ${date}일`
+
+    // 3. 콘솔(F12)에도 확인용 출력
+    console.log("now 객체:", now)
+    console.log(`추출된 날짜: ${year}년 ${month}월 ${date}일`)
+
+    function getTodayName() {
+        const now2 = new Date();
+        let time = document.getElementById("date-display2").textContent = now2.getFullYear() + "-" + String(now2.getMonth() + 1).padStart(2, "0") + "-" + String(now2.getDate()).padStart(2, "0") + " 공대";
+        return time;
+    }
+
+    // 정의한 함수를 호출해주어야 코드가 실행됩니다!
+    getTodayName();
+
+</script>
+
+</html>
